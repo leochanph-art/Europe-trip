@@ -3,47 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Travel Itinerary</title>
+    <title>My Trip Itinerary</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth fade-in animation for changing tabs */
+        .fade-in { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        /* Hide scrollbar for the tab menu */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased pb-10">
+<body class="bg-gray-50 text-gray-800 font-sans antialiased h-screen flex flex-col">
 
-    <header class="bg-blue-600 text-white p-6 shadow-md rounded-b-3xl">
-        <h1 class="text-3xl font-bold">Sapporo Adventure</h1>
-        <p class="mt-2 text-blue-100">April 1, 2026 – April 8, 2026</p>
+    <script>
+        // =========================================================================
+        // 🛑 EASY EDIT SECTION: ONLY CHANGE THE TEXT INSIDE THE QUOTATION MARKS!
+        // =========================================================================
+        
+        const tripData = {
+            title: "My Awesome Europe Trip",
+            dates: "October 2026",
+            days: [
+                // --- DAY 1 ---
+                {
+                    tabName: "Day 1",
+                    dateText: "Oct 1st (Arrival)",
+                    events: [
+                        { time: "15:00", title: "Land at Airport", desc: "Pick up rental car and pocket Wi-Fi." },
+                        { time: "17:30", title: "Hotel Check-in", desc: "Drop off luggage and freshen up." },
+                        { time: "19:00", title: "Welcome Dinner", desc: "Local restaurant near the hotel." }
+                    ]
+                },
+                // --- DAY 2 ---
+                {
+                    tabName: "Day 2",
+                    dateText: "Oct 2nd (City Tour)",
+                    events: [
+                        { time: "09:00", title: "Morning Coffee", desc: "Grab coffee at the famous cafe." },
+                        { time: "10:30", title: "Museum Visit", desc: "Tickets are already booked on my phone." },
+                        { time: "14:00", title: "Shopping District", desc: "Free time to explore." }
+                    ]
+                }
+                // TO ADD DAY 3: Copy the DAY 2 block, add a comma after DAY 2, and paste!
+            ]
+        };
+
+        // =========================================================================
+        // 🛑 DO NOT TOUCH THE CODE BELOW THIS LINE 
+        // =========================================================================
+    </script>
+
+    <header class="bg-blue-600 text-white p-6 shadow-md rounded-b-3xl shrink-0">
+        <h1 class="text-3xl font-bold" id="display-title"></h1>
+        <p class="mt-2 text-blue-100" id="display-dates"></p>
     </header>
 
-    <main class="max-w-md mx-auto mt-6 px-4">
-        
-        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-5 mb-4">
-            <h2 class="text-xl font-bold text-blue-600 border-b pb-2 mb-3">Day 1: Arrival</h2>
-            
-            <ul class="space-y-4">
-                <li class="flex items-start">
-                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-3 mt-0.5">15:00</span>
-                    <div>
-                        <p class="font-medium">Land at New Chitose Airport (CTS)</p>
-                        <p class="text-sm text-gray-500">Pick up rental car / train tickets</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-3 mt-0.5">17:30</span>
-                    <div>
-                        <p class="font-medium">Hotel Check-in</p>
-                        <p class="text-sm text-gray-500">Drop off luggage and freshen up.</p>
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded mr-3 mt-0.5">19:00</span>
-                    <div>
-                        <p class="font-medium">Dinner: Genghis Khan (Mutton BBQ)</p>
-                        <p class="text-sm text-gray-500">Susukino District</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
+    <nav class="flex overflow-x-auto px-4 py-4 space-x-3 no-scrollbar shrink-0" id="tabs-container">
+        </nav>
 
+    <main class="flex-1 overflow-y-auto px-4 pb-10" id="itinerary-content">
         </main>
 
+    <script>
+        // Populate Header
+        document.getElementById('display-title').innerText = tripData.title;
+        document.getElementById('display-dates').innerText = tripData.dates;
+
+        const tabsContainer = document.getElementById('tabs-container');
+        const contentContainer = document.getElementById('itinerary-content');
+
+        // Create the buttons for each day
+        function renderTabs() {
+            tabsContainer.innerHTML = tripData.days.map((day, index) => `
+                <button onclick="showDay(${index})" 
+                        id="tab-${index}"
+                        class="px-5 py-2 rounded-full whitespace-nowrap font-bold text-sm shadow-sm transition-all duration-200 focus:outline-none">
+                    ${day.tabName}
+                </button>
+            `).join('');
+        }
+
+        // Show the schedule when a tab is clicked
+        function showDay(dayIndex) {
+            // Update button colors
+            tripData.days.forEach((_, idx) => {
+                const tab = document.getElementById(`tab-${idx}`);
+                if (idx === dayIndex) {
+                    tab.classList.remove('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+                    tab.classList.add('bg-blue-600', 'text-white');
+                } else {
+                    tab.classList.remove('bg-blue-600', 'text-white');
+                    tab.classList.add('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+                }
+            });
+
+            // Update the day's events
+            const day = tripData.days[dayIndex];
+            contentContainer.innerHTML = `
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 fade-in">
+                    <h2 class="text-xl font-bold text-blue-600 border-b border-gray-100 pb-3 mb-4">${day.dateText}</h2>
+                    <ul class="space-y-5">
+                        ${day.events.map(event => `
+                            <li class="flex items-start">
+                                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded w-14 text-center shrink-0 mt-0.5 border border-blue-200 shadow-sm">${event.time}</span>
+                                <div class="ml-4">
+                                    <p class="font-bold text-gray-800 text-lg leading-tight">${event.title}</p>
+                                    <p class="text-sm text-gray-500 mt-1">${event.desc}</p>
+                                </div>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>
+            `;
+        }
+
+        // Start the app by showing Day 1
+        renderTabs();
+        showDay(0);
+    </script>
 </body>
 </html>
