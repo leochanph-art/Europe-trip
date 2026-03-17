@@ -17,37 +17,168 @@
 <body class="bg-gray-50 text-gray-800 font-sans antialiased h-screen flex flex-col">
 
     <script>
-        // =========================================================================
+                // =========================================================================
         // 🛑 EASY EDIT SECTION: ONLY CHANGE THE TEXT INSIDE THE QUOTATION MARKS!
         // =========================================================================
         
         const tripData = {
-            title: "My Awesome Europe Trip",
-            dates: "October 2026",
+            title: "Europe Adventure: UK, CZ, AT, DE",
+            dates: "May 6, 2026 – May 25, 2026",
             days: [
-                // --- DAY 1 ---
                 {
-                    tabName: "Day 1",
-                    dateText: "Oct 1st (Arrival)",
+                    tabName: "May 6",
+                    dateText: "May 6: Departure",
                     events: [
-                        { time: "15:00", title: "Land at Airport", desc: "Pick up rental car and pocket Wi-Fi." },
-                        { time: "17:30", title: "Hotel Check-in", desc: "Drop off luggage and freshen up." },
-                        { time: "19:00", title: "Welcome Dinner", desc: "Local restaurant near the hotel." }
+                        { time: "Night", title: "Flight CX251", desc: "Late night departure from HKG. In transit to the UK." }
                     ]
                 },
-                // --- DAY 2 ---
                 {
-                    tabName: "Day 2",
-                    dateText: "Oct 2nd (City Tour)",
+                    tabName: "May 7",
+                    dateText: "May 7: London & Oxford",
                     events: [
-                        { time: "09:00", title: "Morning Coffee", desc: "Grab coffee at the famous cafe." },
-                        { time: "10:30", title: "Museum Visit", desc: "Tickets are already booked on my phone." },
-                        { time: "14:00", title: "Shopping District", desc: "Free time to explore." }
+                        { time: "04:40", title: "Arrive in London", desc: "Drop bags at London (Hub Marylebone)." },
+                        { time: "07:50", title: "Oxford Day Trip", desc: "Commute via Tube / GWR Train. Return to London at 17:25." },
+                        { time: "19:30", title: "Phantom of the Opera", desc: "Evening theatre show." }
+                    ]
+                },
+                {
+                    tabName: "May 8",
+                    dateText: "May 8: London to Liverpool",
+                    events: [
+                        { time: "Day", title: "London Photography", desc: "Full day London outdoor photography." },
+                        { time: "19:30", title: "Train to Liverpool", desc: "High-speed Avanti Train from Euston to Liverpool. Stay at Aparthotel Adagio." }
+                    ]
+                },
+                {
+                    tabName: "May 9",
+                    dateText: "May 9: Match Day",
+                    events: [
+                        { time: "14:00", title: "Match: Liverpool vs Chelsea", desc: "Travel via local train." },
+                        { time: "18:00", title: "Train to Manchester", desc: "Head to Manchester for overnight stay." }
+                    ]
+                },
+                {
+                    tabName: "May 10",
+                    dateText: "May 10: To Prague",
+                    events: [
+                        { time: "Morn", title: "Transit to MAN", desc: "Morning transit to Manchester airport." },
+                        { time: "12:00", title: "Flight to Prague", desc: "Ryanair Flight to PRG. Afternoon exploration of Old Town Square." }
+                    ]
+                },
+                {
+                    tabName: "May 11",
+                    dateText: "May 11: Exploring Prague",
+                    events: [
+                        { time: "Dawn", title: "Sunrise Shoot", desc: "Sunrise shoot at Charles Bridge." },
+                        { time: "Day", title: "Petřín Hill", desc: "Petřín Hill hike. Travel by walking." }
+                    ]
+                },
+                {
+                    tabName: "May 12",
+                    dateText: "May 12: Český Krumlov",
+                    events: [
+                        { time: "Day", title: "Český Krumlov", desc: "Medieval town, great river reflections for photography. Travel via RegioJet Bus." }
+                    ]
+                },
+                {
+                    tabName: "May 13",
+                    dateText: "May 13: Vienna Arrival",
+                    events: [
+                        { time: "Day", title: "Schönbrunn Palace", desc: "Arrive in Vienna via Shared Shuttle. Visit Schönbrunn Palace Gardens." }
+                    ]
+                },
+                {
+                    tabName: "May 14",
+                    dateText: "May 14: Vienna Woods",
+                    events: [
+                        { time: "Day", title: "Kahlenberg Hike", desc: "Hike and explore the Vienna Woods. Travel via City Bus / Walk." }
+                    ]
+                },
+                {
+                    tabName: "May 15",
+                    dateText: "May 15: Hallstatt",
+                    events: [
+                        { time: "Day", title: "Skywalk Hike", desc: "Travel via ÖBB Train. Hike to Skywalk. Excellent spot for landscape and couple portraits. Stay in Hallstatt or Obertraun." }
+                    ]
+                },
+                {
+                    tabName: "May 16",
+                    dateText: "May 16: Bavarian Alps",
+                    events: [
+                        { time: "Day", title: "Travel to Berchtesgaden", desc: "Travel day into the Bavarian Alps via ÖBB Train (via Salzburg) + Bus 840." }
+                    ]
+                },
+                {
+                    tabName: "May 17",
+                    dateText: "May 17: Nature Hike",
+                    events: [
+                        { time: "Morn", title: "First Boat to Salet", desc: "Electric Boat. Hike Obersee to Röthbach Waterfall." }
+                    ]
+                },
+                {
+                    tabName: "May 18",
+                    dateText: "May 18: To Munich",
+                    events: [
+                        { time: "Day", title: "Hintersee & Zauberwald", desc: "Hike via Bus 846." },
+                        { time: "Late", title: "Train to Munich", desc: "Late afternoon Regional Train to Munich." }
+                    ]
+                },
+                {
+                    tabName: "May 19",
+                    dateText: "May 19: Neuschwanstein",
+                    events: [
+                        { time: "Day", title: "Neuschwanstein Castle", desc: "Day trip via Regional Train (Bayern Ticket). Hike past Marienbrücke for elevated castle viewpoints." }
+                    ]
+                },
+                {
+                    tabName: "May 20",
+                    dateText: "May 20: Garmisch-Partenkirchen",
+                    events: [
+                        { time: "Day", title: "Partnach Gorge", desc: "Day trip via Regional Train (Bayern Ticket). Hike the Partnach Gorge (Partnachklamm)." }
+                    ]
+                },
+                {
+                    tabName: "May 21",
+                    dateText: "May 21: Lake Eibsee",
+                    events: [
+                        { time: "Day", title: "7km Loop Hike", desc: "Day trip via Regional Train (Bayern Ticket). Hike around Lake Eibsee." }
+                    ]
+                },
+                {
+                    tabName: "May 22",
+                    dateText: "May 22: Munich City",
+                    events: [
+                        { time: "Day", title: "English Garden", desc: "Explore the massive English Garden. Travel via local U-Bahn / Walk." }
+                    ]
+                },
+                {
+                    tabName: "May 23",
+                    dateText: "May 23: Munich River",
+                    events: [
+                        { time: "Day", title: "Isar River & Beer Gardens", desc: "Isar River walks and outdoor beer gardens. Travel via local U-Bahn / Walk." }
+                    ]
+                },
+                {
+                    tabName: "May 24",
+                    dateText: "May 24: Last Day in Munich",
+                    events: [
+                        { time: "Day", title: "Relaxing City Day", desc: "Final relaxing day in the city before departure." }
+                    ]
+                },
+                {
+                    tabName: "May 25",
+                    dateText: "May 25: Heading Home",
+                    events: [
+                        { time: "Day", title: "Flight CX300", desc: "Head to MUC airport for the flight back to Hong Kong." }
                     ]
                 }
-                // TO ADD DAY 3: Copy the DAY 2 block, add a comma after DAY 2, and paste!
             ]
         };
+
+        // =========================================================================
+        // 🛑 DO NOT TOUCH THE CODE BELOW THIS LINE 
+        // =========================================================================
+
 
         // =========================================================================
         // 🛑 DO NOT TOUCH THE CODE BELOW THIS LINE 
