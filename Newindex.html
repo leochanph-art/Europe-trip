@@ -3,174 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Trip Itinerary</title>
+    <title>My Summer Europe Adventure!</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Smooth fade-in animation for changing tabs */
-        .fade-in { animation: fadeIn 0.3s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        /* Custom styles for a playful, summer feel */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        body { font-family: 'Poppins', sans-serif; }
+        
+        /* Smooth fade and slide animation when changing tabs */
+        .fade-in-slide { animation: fadeInSlide 0.4s ease-out; }
+        @keyframes fadeInSlide {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Summer Gradient for Header */
+        .summer-header { background: linear-gradient(135deg, #00B4D8 0%, #FFB703 100%); }
+        
         /* Hide scrollbar for the tab menu */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Icon styling */
+        .event-icon { font-size: 1.5rem; filter: grayscale(100%); opacity: 0.6; transition: 0.3s; }
+        .active-event .event-icon { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased h-screen flex flex-col">
+<body class="bg-sky-50 text-gray-800 h-screen flex flex-col">
 
     <script>
-                // =========================================================================
+        // =========================================================================
         // 🛑 EASY EDIT SECTION: ONLY CHANGE THE TEXT INSIDE THE QUOTATION MARKS!
+        // 🛑 Your detailed itinerary is already included here.
         // =========================================================================
         
         const tripData = {
-            title: "Europe Adventure: UK, CZ, AT, DE",
+            title: "Summer Europe Adventure!",
             dates: "May 6, 2026 – May 25, 2026",
+            // Base URL for icons from a free icon set (like Emojis or simple images)
+            iconsUrl: "https://raw.githubusercontent.com/leonardorame/open-emoji/master/img/",
             days: [
                 {
-                    tabName: "May 6",
-                    dateText: "May 6: Departure",
-                    events: [
-                        { time: "Night", title: "Flight CX251", desc: "Late night departure from HKG. In transit to the UK." }
-                    ]
+                    tabName: "May 6", dateText: "May 6: HK to UK Transit", country: "In Transit", icon: "plane",
+                    events: [{ time: "Night", title: "Flight CX251", desc: "Late night departure from HKG. Your long journey to the UK begins!" }]
                 },
                 {
-                    tabName: "May 7",
-                    dateText: "May 7: London & Oxford",
+                    tabName: "May 7", dateText: "May 7: London & Oxford", country: "UK", icon: "bus",
                     events: [
                         { time: "04:40", title: "Arrive in London", desc: "Drop bags at London (Hub Marylebone)." },
-                        { time: "07:50", title: "Oxford Day Trip", desc: "Commute via Tube / GWR Train. Return to London at 17:25." },
+                        { time: "07:50", title: "Oxford Day Trip", desc: "Commute via Tube/GWR Train. Explore the university city. Return at 17:25." },
                         { time: "19:30", title: "Phantom of the Opera", desc: "Evening theatre show." }
                     ]
                 },
                 {
-                    tabName: "May 8",
-                    dateText: "May 8: London to Liverpool",
+                    tabName: "May 8", dateText: "May 8: London to Liverpool", country: "UK", icon: "camera",
                     events: [
-                        { time: "Day", title: "London Photography", desc: "Full day London outdoor photography." },
-                        { time: "19:30", title: "Train to Liverpool", desc: "High-speed Avanti Train from Euston to Liverpool. Stay at Aparthotel Adagio." }
+                        { time: "Day", title: "London Photography", desc: "Full day of outdoor photography in London." },
+                        { time: "19:30", title: "Train to Liverpool", desc: "High-speed Avanti Train from Euston. Stay at Aparthotel Adagio." }
                     ]
                 },
                 {
-                    tabName: "May 9",
-                    dateText: "May 9: Match Day",
+                    tabName: "May 9", dateText: "May 9: Liverpool vs Chelsea Match!", country: "UK", icon: "soccer",
                     events: [
-                        { time: "14:00", title: "Match: Liverpool vs Chelsea", desc: "Travel via local train." },
-                        { time: "18:00", title: "Train to Manchester", desc: "Head to Manchester for overnight stay." }
+                        { time: "14:00", title: "Liverpool vs Chelsea Match", desc: "Experience the electric atmosphere at Anfield!" },
+                        { time: "18:00", title: "Train to Manchester", desc: "Head to Manchester for the night." }
                     ]
                 },
                 {
-                    tabName: "May 10",
-                    dateText: "May 10: To Prague",
+                    tabName: "May 10", dateText: "May 10: To Prague", country: "UK/CZ", icon: "plane",
                     events: [
-                        { time: "Morn", title: "Transit to MAN", desc: "Morning transit to Manchester airport." },
-                        { time: "12:00", title: "Flight to Prague", desc: "Ryanair Flight to PRG. Afternoon exploration of Old Town Square." }
+                        { time: "Morn", title: "MAN Airport", desc: "Morning transit to Manchester airport." },
+                        { time: "12:00", title: "Flight to Prague", desc: "Ryanair to PRG. Afternoon exploration of Old Town Square." }
                     ]
                 },
                 {
-                    tabName: "May 11",
-                    dateText: "May 11: Exploring Prague",
+                    tabName: "May 11", dateText: "May 11: Exploring Prague", country: "CZ", icon: "sunrise",
                     events: [
-                        { time: "Dawn", title: "Sunrise Shoot", desc: "Sunrise shoot at Charles Bridge." },
-                        { time: "Day", title: "Petřín Hill", desc: "Petřín Hill hike. Travel by walking." }
+                        { time: "Dawn", title: "Sunrise Charles Bridge Shoot", desc: "Capture the bridge at dawn. A must-do!" },
+                        { time: "Day", title: "Petřín Hill Hike", desc: "Hike and enjoy panoramic views." }
                     ]
                 },
                 {
-                    tabName: "May 12",
-                    dateText: "May 12: Český Krumlov",
+                    tabName: "May 12", dateText: "May 12: Český Krumlov", country: "CZ", icon: "mountain",
+                    events: [{ time: "Day", title: "Český Krumlov", desc: "Medieval town, great river reflections for photography. RegioJet Bus." }]
+                },
+                {
+                    tabName: "May 13", dateText: "May 13: Vienna Arrival", country: "AT", icon: "palace",
+                    events: [{ time: "Day", title: "Vienna & Schönbrunn", desc: "Arrive via Shared Shuttle. Visit Schönbrunn Palace Gardens." }]
+                },
+                {
+                    tabName: "May 14", dateText: "May 14: Vienna Woods", country: "AT", icon: "forest",
+                    events: [{ time: "Day", title: "Kahlenberg Hike", desc: "Explore the Vienna Woods. Great views! City Bus/Walk." }]
+                },
+                {
+                    tabName: "May 15", dateText: "May 15: Hallstatt Lake & Skywalk", country: "AT", icon: "lake",
+                    events: [{ time: "Day", title: "Hallstatt Skywalk", desc: "Hike to Skywalk for epic views. Perfect spot for landscape and couple portraits. ÖBB Train." }]
+                },
+                {
+                    tabName: "May 16", dateText: "May 16: Into the Bavarian Alps", country: "AT/DE", icon: "mountain",
+                    events: [{ time: "Day", title: "Travel Day to Berchtesgaden", desc: "Bavarian Alps trip via ÖBB Train (Salzburg) + Bus 840." }]
+                },
+                {
+                    tabName: "May 17", dateText: "May 17: Alpine Nature Hike", country: "DE", icon: "boat",
+                    events: [{ time: "Morn", title: "Electric Boat & Obersee", desc: "Take the first boat to Salet. Hike Obersee to Röthbach Waterfall." }]
+                },
+                {
+                    tabName: "May 18", dateText: "May 18: Hintersee & Zauberwald", country: "DE", icon: "forest",
                     events: [
-                        { time: "Day", title: "Český Krumlov", desc: "Medieval town, great river reflections for photography. Travel via RegioJet Bus." }
+                        { time: "Day", title: "Hintersee & Magic Forest", desc: "Hike the Zauberwald (Magic Forest) via Bus 846." },
+                        { time: "Late", title: "Train to Munich", desc: "Late afternoon train to Munich." }
                     ]
                 },
                 {
-                    tabName: "May 13",
-                    dateText: "May 13: Vienna Arrival",
-                    events: [
-                        { time: "Day", title: "Schönbrunn Palace", desc: "Arrive in Vienna via Shared Shuttle. Visit Schönbrunn Palace Gardens." }
-                    ]
+                    tabName: "May 19", dateText: "May 19: Neuschwanstein Castle", country: "DE", icon: "castle",
+                    events: [{ time: "Day", title: "Neuschwanstein Day Trip", desc: "Fairy tale castle! Hike past Marienbrücke for the best viewpoints. Bayern Ticket." }]
                 },
                 {
-                    tabName: "May 14",
-                    dateText: "May 14: Vienna Woods",
-                    events: [
-                        { time: "Day", title: "Kahlenberg Hike", desc: "Hike and explore the Vienna Woods. Travel via City Bus / Walk." }
-                    ]
+                    tabName: "May 20", dateText: "May 20: Partnach Gorge", country: "DE", icon: "water",
+                    events: [{ time: "Day", title: "Partnach Gorge", desc: "Day trip via Regional Train (Bayern Ticket). Explore the Partnachklamm gorge." }]
                 },
                 {
-                    tabName: "May 15",
-                    dateText: "May 15: Hallstatt",
-                    events: [
-                        { time: "Day", title: "Skywalk Hike", desc: "Travel via ÖBB Train. Hike to Skywalk. Excellent spot for landscape and couple portraits. Stay in Hallstatt or Obertraun." }
-                    ]
+                    tabName: "May 21", dateText: "May 21: Lake Eibsee Loop", country: "DE", icon: "lake",
+                    events: [{ time: "Day", title: "7km Loop Hike", desc: "Day trip to the foot of Zugspitze. 7km hike around Lake Eibsee." }]
                 },
                 {
-                    tabName: "May 16",
-                    dateText: "May 16: Bavarian Alps",
-                    events: [
-                        { time: "Day", title: "Travel to Berchtesgaden", desc: "Travel day into the Bavarian Alps via ÖBB Train (via Salzburg) + Bus 840." }
-                    ]
+                    tabName: "May 22", dateText: "May 22: English Garden, Munich", country: "DE", icon: "park",
+                    events: [{ time: "Day", title: "English Garden", desc: "Explore the massive city park. U-Bahn/Walk." }]
                 },
                 {
-                    tabName: "May 17",
-                    dateText: "May 17: Nature Hike",
-                    events: [
-                        { time: "Morn", title: "First Boat to Salet", desc: "Electric Boat. Hike Obersee to Röthbach Waterfall." }
-                    ]
+                    tabName: "May 23", dateText: "May 23: Isar River & Beer Gardens", country: "DE", icon: "beer",
+                    events: [{ time: "Day", title: "Isar River Walk & Beer", desc: "River walks and classic outdoor beer gardens. U-Bahn/Walk." }]
                 },
                 {
-                    tabName: "May 18",
-                    dateText: "May 18: To Munich",
-                    events: [
-                        { time: "Day", title: "Hintersee & Zauberwald", desc: "Hike via Bus 846." },
-                        { time: "Late", title: "Train to Munich", desc: "Late afternoon Regional Train to Munich." }
-                    ]
+                    tabName: "May 24", dateText: "May 24: Relaxing City Day", country: "DE", icon: "city",
+                    events: [{ time: "Day", title: "Relax in Munich", desc: "Final relaxing day in the city before departure." }]
                 },
                 {
-                    tabName: "May 19",
-                    dateText: "May 19: Neuschwanstein",
-                    events: [
-                        { time: "Day", title: "Neuschwanstein Castle", desc: "Day trip via Regional Train (Bayern Ticket). Hike past Marienbrücke for elevated castle viewpoints." }
-                    ]
-                },
-                {
-                    tabName: "May 20",
-                    dateText: "May 20: Garmisch-Partenkirchen",
-                    events: [
-                        { time: "Day", title: "Partnach Gorge", desc: "Day trip via Regional Train (Bayern Ticket). Hike the Partnach Gorge (Partnachklamm)." }
-                    ]
-                },
-                {
-                    tabName: "May 21",
-                    dateText: "May 21: Lake Eibsee",
-                    events: [
-                        { time: "Day", title: "7km Loop Hike", desc: "Day trip via Regional Train (Bayern Ticket). Hike around Lake Eibsee." }
-                    ]
-                },
-                {
-                    tabName: "May 22",
-                    dateText: "May 22: Munich City",
-                    events: [
-                        { time: "Day", title: "English Garden", desc: "Explore the massive English Garden. Travel via local U-Bahn / Walk." }
-                    ]
-                },
-                {
-                    tabName: "May 23",
-                    dateText: "May 23: Munich River",
-                    events: [
-                        { time: "Day", title: "Isar River & Beer Gardens", desc: "Isar River walks and outdoor beer gardens. Travel via local U-Bahn / Walk." }
-                    ]
-                },
-                {
-                    tabName: "May 24",
-                    dateText: "May 24: Last Day in Munich",
-                    events: [
-                        { time: "Day", title: "Relaxing City Day", desc: "Final relaxing day in the city before departure." }
-                    ]
-                },
-                {
-                    tabName: "May 25",
-                    dateText: "May 25: Heading Home",
-                    events: [
-                        { time: "Day", title: "Flight CX300", desc: "Head to MUC airport for the flight back to Hong Kong." }
-                    ]
+                    tabName: "May 25", dateText: "May 25: Head Back Home", country: "DE/HK", icon: "plane",
+                    events: [{ time: "Day", title: "Flight CX300", desc: "Head to MUC airport for the flight back to Hong Kong. Goodbye, Europe!" }]
                 }
             ]
         };
@@ -178,22 +149,19 @@
         // =========================================================================
         // 🛑 DO NOT TOUCH THE CODE BELOW THIS LINE 
         // =========================================================================
-
-
-        // =========================================================================
-        // 🛑 DO NOT TOUCH THE CODE BELOW THIS LINE 
-        // =========================================================================
     </script>
 
-    <header class="bg-blue-600 text-white p-6 shadow-md rounded-b-3xl shrink-0">
-        <h1 class="text-3xl font-bold" id="display-title"></h1>
-        <p class="mt-2 text-blue-100" id="display-dates"></p>
+    <header class="summer-header text-white p-6 shadow-lg rounded-b-3xl shrink-0 text-center relative overflow-hidden">
+        <div class="absolute top-4 left-4 text-4xl opacity-60">☀️</div>
+        <div class="absolute top-10 right-6 text-3xl opacity-40">☁️</div>
+        <h1 class="text-3xl md:text-4xl font-extrabold" id="display-title"></h1>
+        <p class="mt-2 text-sky-100 font-semibold" id="display-dates"></p>
     </header>
 
-    <nav class="flex overflow-x-auto px-4 py-4 space-x-3 no-scrollbar shrink-0" id="tabs-container">
+    <nav class="flex overflow-x-auto px-4 py-6 space-x-3 no-scrollbar shrink-0 bg-sky-50" id="tabs-container">
         </nav>
 
-    <main class="flex-1 overflow-y-auto px-4 pb-10" id="itinerary-content">
+    <main class="flex-1 overflow-y-auto px-4 pb-12" id="itinerary-content">
         </main>
 
     <script>
@@ -204,43 +172,78 @@
         const tabsContainer = document.getElementById('tabs-container');
         const contentContainer = document.getElementById('itinerary-content');
 
+        // Function to find the icon image URL
+        function getIconUrl(icon) {
+            return `https://raw.githubusercontent.com/twa-space/twemoji/master/twemoji/${icon}.png`;
+        }
+
+        // Map simplified icons to specific Twemoji codes
+        const emojiMap = {
+            'plane': '2708-fe0f', // Airplane
+            'bus': '1f68c',       // Bus
+            'camera': '1f4f7',    // Camera
+            'soccer': '26bd',      // Soccer Ball
+            'sunrise': '1f305',   // Sunrise
+            'mountain': '1f3d4',  // Mountain
+            'palace': '1f3f0',    // Palace/Castle
+            'forest': '1f332',    // Evergreeen Tree
+            'lake': '1f3de',      // National Park (Lake)
+            'boat': '1f6a3',      // Rowboat
+            'castle': '1f3ef',    // Japanese Castle (Neuschwanstein substitute)
+            'water': '1f6cf',     // Waterfall/water
+            'park': '1f333',      // Deciduous Tree
+            'beer': '1f37a',      // Beer Mug
+            'city': '1f306'       // Cityscape at dusk
+        };
+
         // Create the buttons for each day
         function renderTabs() {
             tabsContainer.innerHTML = tripData.days.map((day, index) => `
                 <button onclick="showDay(${index})" 
                         id="tab-${index}"
-                        class="px-5 py-2 rounded-full whitespace-nowrap font-bold text-sm shadow-sm transition-all duration-200 focus:outline-none">
-                    ${day.tabName}
+                        class="px-6 py-3 rounded-full whitespace-nowrap font-bold text-sm shadow transition-all duration-300 transform flex items-center space-x-2 focus:outline-none">
+                    <img src="${getIconUrl(emojiMap[day.icon])}" alt="${day.tabName}" class="w-5 h-5 opacity-70">
+                    <span>${day.tabName}</span>
                 </button>
             `).join('');
         }
 
         // Show the schedule when a tab is clicked
         function showDay(dayIndex) {
-            // Update button colors
+            // Update button colors for active/inactive state
             tripData.days.forEach((_, idx) => {
                 const tab = document.getElementById(`tab-${idx}`);
                 if (idx === dayIndex) {
-                    tab.classList.remove('bg-white', 'text-gray-600', 'border', 'border-gray-200');
-                    tab.classList.add('bg-blue-600', 'text-white');
+                    tab.classList.remove('bg-white', 'text-sky-800', 'scale-100');
+                    tab.classList.add('bg-orange-500', 'text-white', 'scale-110', 'active-event');
                 } else {
-                    tab.classList.remove('bg-blue-600', 'text-white');
-                    tab.classList.add('bg-white', 'text-gray-600', 'border', 'border-gray-200');
+                    tab.classList.remove('bg-orange-500', 'text-white', 'scale-110', 'active-event');
+                    tab.classList.add('bg-white', 'text-sky-800', 'scale-100');
                 }
             });
 
             // Update the day's events
             const day = tripData.days[dayIndex];
             contentContainer.innerHTML = `
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 fade-in">
-                    <h2 class="text-xl font-bold text-blue-600 border-b border-gray-100 pb-3 mb-4">${day.dateText}</h2>
-                    <ul class="space-y-5">
+                <div class="bg-white rounded-3xl shadow-xl p-6 border-t-8 border-orange-400 fade-in-slide relative overflow-hidden">
+                    <div class="absolute -top-6 -right-6 text-7xl text-orange-100 opacity-60">🏖️</div>
+                    <div class="flex items-center space-x-3 border-b-2 border-sky-100 pb-4 mb-6">
+                        <img src="${getIconUrl(emojiMap[day.icon])}" alt="${day.country}" class="w-10 h-10">
+                        <div>
+                            <h2 class="text-2xl font-extrabold text-sky-900">${day.dateText}</h2>
+                            <p class="text-sky-600 font-semibold text-sm">Destinations: ${day.country}</p>
+                        </div>
+                    </div>
+                    <ul class="space-y-6 relative">
+                        <div class="absolute left-6 top-3 bottom-0 w-1 bg-sky-100 rounded-full"></div>
                         ${day.events.map(event => `
-                            <li class="flex items-start">
-                                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded w-14 text-center shrink-0 mt-0.5 border border-blue-200 shadow-sm">${event.time}</span>
-                                <div class="ml-4">
-                                    <p class="font-bold text-gray-800 text-lg leading-tight">${event.title}</p>
-                                    <p class="text-sm text-gray-500 mt-1">${event.desc}</p>
+                            <li class="flex items-start active-event relative pl-12">
+                                <div class="absolute left-4 top-1 w-5 h-5 bg-orange-500 rounded-full border-4 border-white shadow"></div>
+                                
+                                <span class="bg-sky-600 text-white text-xs font-bold px-3 py-1 rounded w-20 text-center shrink-0 mt-0.5 shadow-sm">${event.time}</span>
+                                <div class="ml-5">
+                                    <p class="font-extrabold text-sky-900 text-lg leading-tight">${event.title}</p>
+                                    <p class="text-sm text-sky-700 mt-1 font-medium">${event.desc}</p>
                                 </div>
                             </li>
                         `).join('')}
@@ -249,9 +252,29 @@
             `;
         }
 
-        // Start the app by showing Day 1
+        // Start the app!
         renderTabs();
-        showDay(0);
+
+        // 🧠 Smart Feature: Automatically show the correct day during the trip
+        const startDate = new Date("2026-05-06");
+        const today = new Date();
+        const differenceInTime = today.getTime() - startDate.getTime();
+        const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+
+        if (differenceInDays >= 0 && differenceInDays < tripData.days.length) {
+            // It's trip time! Show the current day.
+            showDay(differenceInDays);
+            // Auto-scroll the tab bar to the current day
+            document.getElementById(`tab-${differenceInDays}`).scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } else if (today.getTime() > new Date(startDate.getTime() + (tripData.days.length * 24 * 60 * 60 * 1000)).getTime()) {
+            // Trip is over, show the last day (Departure).
+            showDay(tripData.days.length - 1);
+            tabsContainer.scrollLeft = tabsContainer.scrollWidth; // Scroll to the end
+        } else {
+            // Trip hasn't started yet, show Day 1.
+            showDay(0);
+        }
+
     </script>
 </body>
 </html>
