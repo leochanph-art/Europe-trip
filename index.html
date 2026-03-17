@@ -3,170 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Spring Europe Adventure!</title>
+    <title>My Summer Europe Adventure!</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom styles for a playful, summer feel */
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
         
         body { font-family: 'Poppins', sans-serif; }
         
-        /* Smooth fade and slide animation when changing tabs */
         .fade-in-slide { animation: fadeInSlide 0.4s ease-out; }
         @keyframes fadeInSlide {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Summer Gradient for Header */
         .summer-header { background: linear-gradient(135deg, #00B4D8 0%, #FFB703 100%); }
-        
-        /* Hide scrollbar for the tab menu */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* Icon styling */
-        .event-icon { font-size: 1.5rem; filter: grayscale(100%); opacity: 0.6; transition: 0.3s; }
-        .active-event .event-icon { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+        /* Emoji animation for active tab */
+        .event-emoji { opacity: 0.6; transition: 0.3s; transform: scale(1); filter: grayscale(100%); }
+        .active-event .event-emoji { opacity: 1; transform: scale(1.2); filter: grayscale(0%); }
     </style>
 </head>
 <body class="bg-sky-50 text-gray-800 h-screen flex flex-col">
 
     <script>
         // =========================================================================
-        // 🛑 EASY EDIT SECTION: ONLY CHANGE THE TEXT INSIDE THE QUOTATION MARKS!
-        // 🛑 Your detailed itinerary is already included here.
+        // 🛑 EASY EDIT SECTION
+        // To add a map, paste the link inside mapLink: "YOUR_LINK_HERE"
+        // If you don't need a map for that event, just leave mapLink out completely!
         // =========================================================================
         
         const tripData = {
             title: "Summer Europe Adventure!",
             dates: "May 6, 2026 – May 25, 2026",
-            // Base URL for icons from a free icon set (like Emojis or simple images)
-            iconsUrl: "https://raw.githubusercontent.com/leonardorame/open-emoji/master/img/",
             days: [
-                {
-                    tabName: "May 6", dateText: "May 6: HK to UK Transit", country: "In Transit", icon: "plane",
-                    events: [{ time: "Night 22:45 (HKG) ", title: "Flight CX251", desc: "Late night departure from HKG. Your long journey to the UK begins!" }]
+                   {
+                    tabName: "May 6", dateText: "May 6: HK to UK Transit", country: "In Transit", icon: "✈️",
+                    events: [
+                        { time: "Night", title: "Flight CX251", desc: "Late night departure from HKG. Your long journey to the UK begins!", mapLink: "https://www.google.com/maps/search/?api=1&query=Hong+Kong+International+Airport" }
+                    ]
                 },
                 {
-                    tabName: "May 7", dateText: "May 7: London & Oxford", country: "UK", icon: "bus",
+                    tabName: "May 7", dateText: "May 7: London & Oxford", country: "UK", icon: "🚌",
                     events: [
-                        { time: "04:40", title: "Land at LHR", desc: "Clear customs and take the Elizabeth Line to Paddington." },
-                        { time: "06:45", title: "Drop Luggage", desc: "Drop luggage at Hub London Marylebone." },
-                        { time: "07:15", title: "Paddington Station", desc: "Walk to station, grab a coffee and breakfast." },
-                        { time: "07:50", title: "Train to Oxford", desc: "Board the GWR Train." },
-                        { time: "08:50", title: "抵達與市區漫步", desc: "步出牛津車站，迎著清晨微涼的空氣直奔市中心。此時遊客尚未湧入，是整座學術名城最寧靜的時刻。" },
-                        { time: "09:15", title: "拉德克里夫圓樓 & 嘆息橋", desc: "拍攝牛津最經典的拉德克里夫圓樓。接著步行轉往嘆息橋，拍出極具張力的雙人合照。" },
-                        { time: "10:00", title: "博德利圖書館 & 大學教堂", desc: "拍攝歐洲最古老圖書館中庭。登上聖母瑪利亞大學教堂塔樓，無死角俯瞰壯闊的尖塔天際線。" },
-                        { time: "11:30", title: "蓋納市集 (Covered Market)", desc: "拍攝色彩豐富的生活感街拍，品嚐英式肉餡餅或 Ben's Cookies 補充體力。" },
-                        { time: "13:15", title: "基督堂學院 (Christ Church)", desc: "漫步湯姆方庭，進入霍格華茲食堂原型的大禮堂。離開前在 Christ Church Meadow 拍攝自然風景。" },
-                        { time: "15:30", title: "漫步回程", desc: "沿著古老街道慢慢走回牛津車站。" },
+                        { time: "04:40", title: "Land at LHR", desc: "Clear customs and take the Elizabeth Line to Paddington.", mapLink: "https://www.google.com/maps/search/?api=1&query=Heathrow+Airport+London" },
+                        { time: "06:45", title: "Drop Luggage", desc: "Drop luggage at Hub London Marylebone.", mapLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone" },
+                        { time: "07:15", title: "Paddington Station", desc: "Walk to station, grab a coffee and breakfast.", mapLink: "https://www.google.com/maps/search/?api=1&query=Paddington+Station+London" },
+                        { time: "07:50", title: "Train to Oxford", desc: "Board the GWR Train.", mapLink: "https://www.google.com/maps/search/?api=1&query=Oxford+Station+UK" },
+                        { time: "08:50", title: "抵達與市區漫步", desc: "步出牛津車站，迎著清晨微涼的空氣直奔市中心。此時遊客尚未湧入，是整座學術名城最寧靜的時刻。", mapLink: "https://www.google.com/maps/search/?api=1&query=Oxford+City+Centre+UK" },
+                        { time: "09:15", title: "拉德克里夫圓樓 & 嘆息橋", desc: "拍攝牛津最經典的拉德克里夫圓樓。接著步行轉往嘆息橋，拍出極具張力的雙人合照。", mapLink: "https://www.google.com/maps/search/?api=1&query=Radcliffe+Camera+Oxford" },
+                        { time: "10:00", title: "博德利圖書館 & 大學教堂", desc: "拍攝歐洲最古老圖書館中庭。登上聖母瑪利亞大學教堂塔樓，無死角俯瞰壯闊的尖塔天際線。", mapLink: "https://www.google.com/maps/search/?api=1&query=University+Church+of+St+Mary+the+Virgin+Oxford" },
+                        { time: "11:30", title: "蓋納市集 (Covered Market)", desc: "拍攝色彩豐富的生活感街拍，品嚐英式肉餡餅或 Ben's Cookies 補充體力。", mapLink: "https://www.google.com/maps/search/?api=1&query=Covered+Market+Oxford" },
+                        { time: "13:15", title: "基督堂學院 (Christ Church)", desc: "漫步湯姆方庭，進入霍格華茲食堂原型的大禮堂。離開前在 Christ Church Meadow 拍攝自然風景。", mapLink: "https://www.google.com/maps/search/?api=1&query=Christ+Church+Oxford" },
+                        { time: "15:30", title: "漫步回程", desc: "沿著古老街道慢慢走回牛津車站。", mapLink: "https://www.google.com/maps/search/?api=1&query=Oxford+Station+UK" },
                         { time: "16:31", title: "Train to London", desc: "Board the return GWR Train from Oxford." },
-                        { time: "17:25", title: "Arrive at Paddington", desc: "Head back to the hotel." },
-                        { time: "17:45", title: "Hotel Check-in", desc: "Check into Hub London Marylebone, shower, and change for the evening." },
-                        { time: "18:30", title: "To Piccadilly Circus", desc: "Take the Bakerloo Line." },
-                        { time: "18:50", title: "Dinner in Soho", desc: "Grab quick street food or a fast bite." },
-                        { time: "19:30", title: "Phantom of the Opera", desc: "Watch the classic show at His Majesty's Theatre." },
+                        { time: "17:25", title: "Arrive at Paddington", desc: "Head back to the hotel.", mapLink: "https://www.google.com/maps/search/?api=1&query=Paddington+Station+London" },
+                        { time: "17:45", title: "Hotel Check-in", desc: "Check into Hub London Marylebone, shower, and change for the evening.", mapLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone" },
+                        { time: "18:30", title: "To Piccadilly Circus", desc: "Take the Bakerloo Line.", mapLink: "https://www.google.com/maps/search/?api=1&query=Piccadilly+Circus+Station+London" },
+                        { time: "18:50", title: "Dinner in Soho", desc: "Grab quick street food or a fast bite.", mapLink: "https://www.google.com/maps/search/?api=1&query=Soho+London" },
+                        { time: "19:30", title: "Phantom of the Opera", desc: "Watch the classic show at His Majesty's Theatre.", mapLink: "https://www.google.com/maps/search/?api=1&query=His+Majesty%27s+Theatre+London" },
                         { time: "22:30", title: "Show Ends", desc: "Walk through the illuminated West End and head back to the hotel for a well-earned sleep." }
                     ]
                 },
                 {
-                    tabName: "May 8", dateText: "May 8: London Icons & Train North", country: "UK", icon: "camera",
+                    tabName: "May 8", dateText: "May 8: London Icons & Train North", country: "UK", icon: "📷",
                     events: [
-                        { time: "07:00", title: "Tower Bridge Sunrise Shoot", desc: "Take the Tube early. Capture wide-angle shots and clean couple portraits before the commuter rush." },
-                        { time: "08:30", title: "Thames Walk to Borough Market", desc: "Walk west along the South Bank. Grab artisan coffee or a hot breakfast sandwich." },
-                        { time: "10:15", title: "Buckingham Palace", desc: "Take the Jubilee Line to Green Park. Secure an elevated spot on the steps by 10:45 AM for the 11:00 AM Guard Change." },
-                        { time: "11:45", title: "St James's Park", desc: "Frame shots across the central lake, capturing pelicans with the London Eye in the background." },
-                        { time: "13:00", title: "Big Ben & Parliament Square", desc: "Walk onto Westminster Bridge for the classic wide shot of the River Thames and Houses of Parliament." },
-                        { time: "14:00", title: "Covent Garden & Lunch", desc: "Enjoy lunch at an outdoor café. Endless opportunities for dynamic street photography." },
-                        { time: "15:30", title: "Hyde Park & Italian Gardens", desc: "Walk to the Italian Gardens. The fountains offer a great contrast to upcoming alpine hikes." },
-                        { time: "17:00", title: "Luggage Retrieval", desc: "Head back to Hub London Marylebone. Freshen up and retrieve heavy luggage." },
-                        { time: "18:00", title: "Transit to London Euston", desc: "Take the Tube or a black cab. Buy snacks for the train ride." },
-                        { time: "19:30", title: "Fast Train to Liverpool", desc: "Board the Avanti West Coast train. Relax and review camera footage." },
-                        { time: "22:00", title: "Arrival in Liverpool", desc: "Arrive at Lime Street Station. Short taxi to the hotel to rest before matchday!" }
+                        { time: "07:00", title: "Tower Bridge Sunrise Shoot", desc: "Take the Tube early. Capture wide-angle shots and clean couple portraits before the commuter rush.", mapLink: "https://www.google.com/maps/search/?api=1&query=Tower+Bridge+London" },
+                        { time: "08:30", title: "Thames Walk to Borough Market", desc: "Walk west along the South Bank. Grab artisan coffee or a hot breakfast sandwich.", mapLink: "https://www.google.com/maps/search/?api=1&query=Borough+Market+London" },
+                        { time: "10:15", title: "Buckingham Palace", desc: "Take the Jubilee Line to Green Park. Secure an elevated spot on the steps by 10:45 AM for the 11:00 AM Guard Change.", mapLink: "https://www.google.com/maps/search/?api=1&query=Victoria+Memorial+Buckingham+Palace+London" },
+                        { time: "11:45", title: "St James's Park", desc: "Frame shots across the central lake, capturing pelicans with the London Eye in the background.", mapLink: "https://www.google.com/maps/search/?api=1&query=St+James%27s+Park+London" },
+                        { time: "13:00", title: "Big Ben & Parliament Square", desc: "Walk onto Westminster Bridge for the classic wide shot of the River Thames and Houses of Parliament.", mapLink: "https://www.google.com/maps/search/?api=1&query=Big+Ben+London" },
+                        { time: "14:00", title: "Covent Garden & Lunch", desc: "Enjoy lunch at an outdoor café. Endless opportunities for dynamic street photography.", mapLink: "https://www.google.com/maps/search/?api=1&query=Covent+Garden+London" },
+                        { time: "15:30", title: "Hyde Park & Italian Gardens", desc: "Walk to the Italian Gardens. The fountains offer a great contrast to upcoming alpine hikes.", mapLink: "https://www.google.com/maps/search/?api=1&query=Italian+Gardens+Hyde+Park+London" },
+                        { time: "17:00", title: "Luggage Retrieval", desc: "Head back to Hub London Marylebone. Freshen up and retrieve heavy luggage.", mapLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone" },
+                        { time: "18:00", title: "Transit to London Euston", desc: "Take the Tube or a black cab. Buy snacks for the train ride.", mapLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" },
+                        { time: "19:30", title: "Fast Train to Liverpool", desc: "Board the Avanti West Coast train. Relax and review camera footage.", mapLink: "https://www.google.com/maps/search/?api=1&query=Liverpool+Lime+Street+Station" },
+                        { time: "22:00", title: "Arrival in Liverpool", desc: "Arrive at Lime Street Station. Short taxi to the hotel to rest before matchday!", mapLink: "https://www.google.com/maps/search/?api=1&query=Aparthotel+Adagio+Liverpool+City+Centre" }
                     ]
                 },
 
-                {
-                    tabName: "May 9", dateText: "May 9: Liverpool vs Chelsea Match!", country: "UK", icon: "soccer",
-                    events: [
-                        { time: "14:00", title: "Liverpool vs Chelsea Match", desc: "Experience the electric atmosphere at Anfield!" },
-                        { time: "18:00", title: "Train to Manchester", desc: "Head to Manchester for the night." }
-                    ]
-                },
-                {
-                    tabName: "May 10", dateText: "May 10: To Prague", country: "UK/CZ", icon: "plane",
-                    events: [
-                        { time: "Morn", title: "MAN Airport", desc: "Morning transit to Manchester airport." },
-                        { time: "12:00", title: "Flight to Prague", desc: "Ryanair to PRG. Afternoon exploration of Old Town Square." }
-                    ]
-                },
-                {
-                    tabName: "May 11", dateText: "May 11: Exploring Prague", country: "CZ", icon: "sunrise",
-                    events: [
-                        { time: "Dawn", title: "Sunrise Charles Bridge Shoot", desc: "Capture the bridge at dawn. A must-do!" },
-                        { time: "Day", title: "Petřín Hill Hike", desc: "Hike and enjoy panoramic views." }
-                    ]
-                },
-                {
-                    tabName: "May 12", dateText: "May 12: Český Krumlov", country: "CZ", icon: "mountain",
-                    events: [{ time: "Day", title: "Český Krumlov", desc: "Medieval town, great river reflections for photography. RegioJet Bus." }]
-                },
-                {
-                    tabName: "May 13", dateText: "May 13: Vienna Arrival", country: "AT", icon: "palace",
-                    events: [{ time: "Day", title: "Vienna & Schönbrunn", desc: "Arrive via Shared Shuttle. Visit Schönbrunn Palace Gardens." }]
-                },
-                {
-                    tabName: "May 14", dateText: "May 14: Vienna Woods", country: "AT", icon: "forest",
-                    events: [{ time: "Day", title: "Kahlenberg Hike", desc: "Explore the Vienna Woods. Great views! City Bus/Walk." }]
-                },
-                {
-                    tabName: "May 15", dateText: "May 15: Hallstatt Lake & Skywalk", country: "AT", icon: "lake",
-                    events: [{ time: "Day", title: "Hallstatt Skywalk", desc: "Hike to Skywalk for epic views. Perfect spot for landscape and couple portraits. ÖBB Train." }]
-                },
-                {
-                    tabName: "May 16", dateText: "May 16: Into the Bavarian Alps", country: "AT/DE", icon: "mountain",
-                    events: [{ time: "Day", title: "Travel Day to Berchtesgaden", desc: "Bavarian Alps trip via ÖBB Train (Salzburg) + Bus 840." }]
-                },
-                {
-                    tabName: "May 17", dateText: "May 17: Alpine Nature Hike", country: "DE", icon: "boat",
-                    events: [{ time: "Morn", title: "Electric Boat & Obersee", desc: "Take the first boat to Salet. Hike Obersee to Röthbach Waterfall." }]
-                },
-                {
-                    tabName: "May 18", dateText: "May 18: Hintersee & Zauberwald", country: "DE", icon: "forest",
-                    events: [
-                        { time: "Day", title: "Hintersee & Magic Forest", desc: "Hike the Zauberwald (Magic Forest) via Bus 846." },
-                        { time: "Late", title: "Train to Munich", desc: "Late afternoon train to Munich." }
-                    ]
-                },
-                {
-                    tabName: "May 19", dateText: "May 19: Neuschwanstein Castle", country: "DE", icon: "castle",
-                    events: [{ time: "Day", title: "Neuschwanstein Day Trip", desc: "Fairy tale castle! Hike past Marienbrücke for the best viewpoints. Bayern Ticket." }]
-                },
-                {
-                    tabName: "May 20", dateText: "May 20: Partnach Gorge", country: "DE", icon: "water",
-                    events: [{ time: "Day", title: "Partnach Gorge", desc: "Day trip via Regional Train (Bayern Ticket). Explore the Partnachklamm gorge." }]
-                },
-                {
-                    tabName: "May 21", dateText: "May 21: Lake Eibsee Loop", country: "DE", icon: "lake",
-                    events: [{ time: "Day", title: "7km Loop Hike", desc: "Day trip to the foot of Zugspitze. 7km hike around Lake Eibsee." }]
-                },
-                {
-                    tabName: "May 22", dateText: "May 22: English Garden, Munich", country: "DE", icon: "park",
-                    events: [{ time: "Day", title: "English Garden", desc: "Explore the massive city park. U-Bahn/Walk." }]
-                },
-                {
-                    tabName: "May 23", dateText: "May 23: Isar River & Beer Gardens", country: "DE", icon: "beer",
-                    events: [{ time: "Day", title: "Isar River Walk & Beer", desc: "River walks and classic outdoor beer gardens. U-Bahn/Walk." }]
-                },
-                {
-                    tabName: "May 24", dateText: "May 24: Relaxing City Day", country: "DE", icon: "city",
-                    events: [{ time: "Day", title: "Relax in Munich", desc: "Final relaxing day in the city before departure." }]
-                },
-                {
-                    tabName: "May 25", dateText: "May 25: Head Back Home", country: "DE/HK", icon: "plane",
-                    events: [{ time: "Day", title: "Flight CX300", desc: "Head to MUC airport for the flight back to Hong Kong. Goodbye, Europe!" }]
-                }
+                // COPY PASTE YOUR OTHER DAYS BELOW THIS LINE
             ]
         };
 
@@ -182,77 +99,51 @@
         <p class="mt-2 text-sky-100 font-semibold" id="display-dates"></p>
     </header>
 
-    <nav class="flex overflow-x-auto px-4 py-6 space-x-3 no-scrollbar shrink-0 bg-sky-50" id="tabs-container">
-        </nav>
+    <nav class="flex overflow-x-auto px-4 py-6 space-x-3 no-scrollbar shrink-0 bg-sky-50" id="tabs-container"></nav>
 
-    <main class="flex-1 overflow-y-auto px-4 pb-12" id="itinerary-content">
-        </main>
+    <main class="flex-1 overflow-y-auto px-4 pb-12" id="itinerary-content"></main>
 
     <script>
-        // Populate Header
         document.getElementById('display-title').innerText = tripData.title;
         document.getElementById('display-dates').innerText = tripData.dates;
 
         const tabsContainer = document.getElementById('tabs-container');
         const contentContainer = document.getElementById('itinerary-content');
 
-        // Function to find the icon image URL
-        function getIconUrl(icon) {
-            return `https://raw.githubusercontent.com/twa-space/twemoji/master/twemoji/${icon}.png`;
-        }
-
-        // Map simplified icons to specific Twemoji codes
-        const emojiMap = {
-            'plane': '2708-fe0f', // Airplane
-            'bus': '1f68c',       // Bus
-            'camera': '1f4f7',    // Camera
-            'soccer': '26bd',      // Soccer Ball
-            'sunrise': '1f305',   // Sunrise
-            'mountain': '1f3d4',  // Mountain
-            'palace': '1f3f0',    // Palace/Castle
-            'forest': '1f332',    // Evergreeen Tree
-            'lake': '1f3de',      // National Park (Lake)
-            'boat': '1f6a3',      // Rowboat
-            'castle': '1f3ef',    // Japanese Castle (Neuschwanstein substitute)
-            'water': '1f6cf',     // Waterfall/water
-            'park': '1f333',      // Deciduous Tree
-            'beer': '1f37a',      // Beer Mug
-            'city': '1f306'       // Cityscape at dusk
-        };
-
-        // Create the buttons for each day
+        // Render Tabs with Native Emojis
         function renderTabs() {
             tabsContainer.innerHTML = tripData.days.map((day, index) => `
                 <button onclick="showDay(${index})" 
                         id="tab-${index}"
-                        class="px-6 py-3 rounded-full whitespace-nowrap font-bold text-sm shadow transition-all duration-300 transform flex items-center space-x-2 focus:outline-none">
-                    <img src="${getIconUrl(emojiMap[day.icon])}" alt="${day.tabName}" class="w-5 h-5 opacity-70">
+                        class="px-5 py-3 rounded-full whitespace-nowrap font-bold text-sm shadow transition-all duration-300 transform flex items-center space-x-2 focus:outline-none bg-white text-sky-800">
+                    <span class="text-xl event-emoji">${day.icon}</span>
                     <span>${day.tabName}</span>
                 </button>
             `).join('');
         }
 
-        // Show the schedule when a tab is clicked
+        // Show Day Content
         function showDay(dayIndex) {
-            // Update button colors for active/inactive state
             tripData.days.forEach((_, idx) => {
                 const tab = document.getElementById(`tab-${idx}`);
                 if (idx === dayIndex) {
-                    tab.classList.remove('bg-white', 'text-sky-800', 'scale-100');
-                    tab.classList.add('bg-orange-500', 'text-white', 'scale-110', 'active-event');
+                    tab.classList.replace('bg-white', 'bg-orange-500');
+                    tab.classList.replace('text-sky-800', 'text-white');
+                    tab.classList.add('scale-110', 'active-event');
                 } else {
-                    tab.classList.remove('bg-orange-500', 'text-white', 'scale-110', 'active-event');
-                    tab.classList.add('bg-white', 'text-sky-800', 'scale-100');
+                    tab.classList.replace('bg-orange-500', 'bg-white');
+                    tab.classList.replace('text-white', 'text-sky-800');
+                    tab.classList.remove('scale-110', 'active-event');
                 }
             });
 
-            // Update the day's events
             const day = tripData.days[dayIndex];
+            
             contentContainer.innerHTML = `
                 <div class="bg-white rounded-3xl shadow-xl p-6 border-t-8 border-orange-400 fade-in-slide relative overflow-hidden">
-                    <div class="absolute -top-6 -right-6 text-7xl text-orange-100 opacity-60">🏖️</div>
+                    <div class="absolute -top-6 -right-6 text-7xl opacity-30">🌍</div>
                     <div class="flex items-center space-x-3 border-b-2 border-sky-100 pb-4 mb-6">
-                        <img src="${getIconUrl(emojiMap[day.icon])}" alt="${day.country}" class="w-10 h-10">
+                        <span class="text-4xl drop-shadow-sm">${day.icon}</span>
                         <div>
                             <h2 class="text-2xl font-extrabold text-sky-900">${day.dateText}</h2>
                             <p class="text-sky-600 font-semibold text-sm">Destinations: ${day.country}</p>
@@ -261,12 +152,14 @@
                     <ul class="space-y-6 relative">
                         <div class="absolute left-6 top-3 bottom-0 w-1 bg-sky-100 rounded-full"></div>
                         ${day.events.map(event => `
-                            <li class="flex items-start active-event relative pl-12">
-                                <div class="absolute left-4 top-1 w-5 h-5 bg-orange-500 rounded-full border-4 border-white shadow"></div>
-                                
+                            <li class="flex items-start relative pl-12">
+                                <div class="absolute left-4 top-1 w-5 h-5 bg-orange-500 rounded-full border-4 border-white shadow z-10"></div>
                                 <span class="bg-sky-600 text-white text-xs font-bold px-3 py-1 rounded w-20 text-center shrink-0 mt-0.5 shadow-sm">${event.time}</span>
                                 <div class="ml-5">
-                                    <p class="font-extrabold text-sky-900 text-lg leading-tight">${event.title}</p>
+                                    ${event.mapLink ? 
+                                      `<a href="${event.mapLink}" target="_blank" class="font-extrabold text-sky-900 text-lg leading-tight hover:text-orange-500 underline decoration-orange-300 underline-offset-4 flex items-center gap-1">${event.title} <span class="text-sm">📍</span></a>` : 
+                                      `<p class="font-extrabold text-sky-900 text-lg leading-tight">${event.title}</p>`
+                                    }
                                     <p class="text-sm text-sky-700 mt-1 font-medium">${event.desc}</p>
                                 </div>
                             </li>
@@ -276,29 +169,22 @@
             `;
         }
 
-        // Start the app!
         renderTabs();
 
-        // 🧠 Smart Feature: Automatically show the correct day during the trip
+        // Smart Feature: Auto-show current day
         const startDate = new Date("2026-05-06");
         const today = new Date();
-        const differenceInTime = today.getTime() - startDate.getTime();
-        const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+        const differenceInDays = Math.floor((today.getTime() - startDate.getTime()) / (1000 * 3600 * 24));
 
         if (differenceInDays >= 0 && differenceInDays < tripData.days.length) {
-            // It's trip time! Show the current day.
             showDay(differenceInDays);
-            // Auto-scroll the tab bar to the current day
-            document.getElementById(`tab-${differenceInDays}`).scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        } else if (today.getTime() > new Date(startDate.getTime() + (tripData.days.length * 24 * 60 * 60 * 1000)).getTime()) {
-            // Trip is over, show the last day (Departure).
+            setTimeout(() => document.getElementById(`tab-${differenceInDays}`).scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }), 100);
+        } else if (today.getTime() > startDate.getTime()) {
             showDay(tripData.days.length - 1);
-            tabsContainer.scrollLeft = tabsContainer.scrollWidth; // Scroll to the end
+            setTimeout(() => tabsContainer.scrollLeft = tabsContainer.scrollWidth, 100);
         } else {
-            // Trip hasn't started yet, show Day 1.
             showDay(0);
         }
-
     </script>
 </body>
 </html>
