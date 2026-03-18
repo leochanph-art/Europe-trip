@@ -18,8 +18,7 @@
 
     <script>
         // =========================================================================
-        // 🛑 EASY EDIT SECTION
-        // Notice the new 'dateCode' and 'coords' for the Smart Weather Widget!
+        // 🛑 EASY EDIT SECTION: Contains May 6 to May 12
         // =========================================================================
         
         const tripData = {
@@ -28,74 +27,78 @@
             days: [
                 {
                     tabName: "May 6", dateText: "May 6: Transit", country: "HKG → LHR", icon: "🇭🇰 / 🇬🇧",
-                    dateCode: "2026-05-06", coords: { lat: 22.3080, lon: 113.9185 }, // HKG Airport
-                    acc: { outName: "Hong Kong (Home)", outLink: "", inName: "In Transit (Flight CX251)", inLink: "https://www.google.com/search?q=Flight+CX251" },
+                    acc: { 
+                        outName: "Hong Kong (Home)", outLink: "", 
+                        inName: "In Transit (Flight CX251)", inLink: "https://www.google.com/search?q=Flight+CX251" 
+                    },
                     events: [
-                        { time: "Night", commute: "Flight ✈️", transitNo: "<a href='https://www.google.com/search?q=Flight+CX251' target='_blank'>CX251 ↗</a>", title: "Flight CX251", desc: "Late night departure from HKG." }
+                        // ✈️ Notice the clickable Google Search link in transitNo!
+                        { time: "Night", commute: "Flight ✈️", transitNo: "<a href='https://www.google.com/search?q=Flight+CX251' target='_blank'>CX251 ↗</a>", title: "Flight CX251", desc: "Late night departure from HKG. The journey begins!" }
                     ]
                 },
                 {
                     tabName: "May 7", dateText: "May 7: London & Oxford", country: "UK", icon: "🇬🇧",
-                    dateCode: "2026-05-07", coords: { lat: 51.7520, lon: -1.2577 }, // Oxford, UK
-                    acc: { outName: "In Transit (Flight CX251)", outLink: "", inName: "Hub London Marylebone", inLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone" },
+                    acc: { 
+                        outName: "In Transit (Flight CX251)", outLink: "", 
+                        inName: "Hub London Marylebone", inLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone" 
+                    },
                     events: [
+                        { time: "04:40", commute: "Train 🚇", transitNo: "Elizabeth Line", title: "Land at LHR", desc: "Clear customs, take train to Paddington.", mapLink: "https://www.google.com/maps/search/?api=1&query=Heathrow+Airport+London" },
+                        { time: "06:45", commute: "Walk 🚶", title: "Drop Luggage", desc: "Drop bags at Hub London Marylebone.", mapLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone" },
                         { time: "07:50", commute: "Train 🚆", transitNo: "GWR", title: "Train to Oxford", desc: "Board the GWR Train.", mapLink: "https://www.google.com/maps/search/?api=1&query=Oxford+Station+UK" },
                         { time: "09:15", commute: "Walk 🚶", title: "Radcliffe Camera & Bridge of Sighs", desc: "拍攝牛津經典地標與嘆息橋雙人合照。", mapLink: "https://www.google.com/maps/search/?api=1&query=Radcliffe+Camera+Oxford" },
+                        { time: "10:00", title: "Bodleian Library & St Mary's", desc: "登上塔樓俯瞰尖塔天際線。", mapLink: "https://www.google.com/maps/search/?api=1&query=University+Church+of+St+Mary+the+Virgin+Oxford" },
+                        { time: "11:30", commute: "Walk 🚶", title: "Covered Market Lunch", desc: "拍攝生活感街拍，品嚐英式肉餡餅。", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Covered+Market+Oxford" },
+                        { time: "13:15", title: "Christ Church", desc: "霍格華茲食堂原型，並在 Meadow 拍攝自然風景。", mapLink: "https://www.google.com/maps/search/?api=1&query=Christ+Church+Oxford" },
+                        { time: "16:31", commute: "Train 🚆", transitNo: "GWR", title: "Train to London", desc: "Board the return GWR Train." },
+                        { time: "18:50", title: "Dinner in Soho", desc: "Grab quick street food or a fast bite before the show.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Soho+London" },
                         { time: "19:30", title: "Phantom of the Opera", desc: "Watch the classic show at His Majesty's Theatre.", mapLink: "https://www.google.com/maps/search/?api=1&query=His+Majesty%27s+Theatre+London" }
                     ]
                 },
                 {
                     tabName: "May 8", dateText: "May 8: London Icons", country: "UK", icon: "🇬🇧",
-                    dateCode: "2026-05-08", coords: { lat: 51.5072, lon: -0.1276 }, // London, UK
-                    acc: { outName: "Hub London Marylebone", outLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone", inName: "Aparthotel Adagio (Liverpool)", inLink: "https://www.google.com/maps/search/?api=1&query=Aparthotel+Adagio+Liverpool+City+Centre" },
+                    acc: { 
+                        outName: "Hub London Marylebone", outLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone", 
+                        inName: "Aparthotel Adagio (Liverpool)", inLink: "https://www.google.com/maps/search/?api=1&query=Aparthotel+Adagio+Liverpool+City+Centre" 
+                    },
                     events: [
                         { time: "07:00", commute: "Tube 🚇", title: "Tower Bridge Sunrise Shoot", desc: "Capture clean couple portraits before the commuter rush.", mapLink: "https://www.google.com/maps/search/?api=1&query=Tower+Bridge+London" },
-                        { time: "10:15", commute: "Tube 🚇", transitNo: "Jubilee Line", title: "Buckingham Palace", desc: "Secure an elevated spot by 10:45 AM.", mapLink: "https://www.google.com/maps/search/?api=1&query=Victoria+Memorial+Buckingham+Palace+London" },
-                        { time: "19:30", commute: "Train 🚆", transitNo: "Avanti", title: "Fast Train to Liverpool", desc: "Board the Avanti West Coast train.", mapLink: "https://www.google.com/maps/search/?api=1&query=Liverpool+Lime+Street+Station" }
+                        { time: "08:30", commute: "Walk 🚶", title: "Borough Market Breakfast", desc: "Walk west along the South Bank for artisan coffee.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Borough+Market+London" },
+                        { time: "10:15", commute: "Tube 🚇", transitNo: "Jubilee Line", title: "Buckingham Palace", desc: "Secure an elevated spot by 10:45 AM for the Guard Change.", mapLink: "https://www.google.com/maps/search/?api=1&query=Victoria+Memorial+Buckingham+Palace+London" },
+                        { time: "11:45", commute: "Walk 🚶", title: "St James's Park", desc: "Capture pelicans with the London Eye in the background.", mapLink: "https://www.google.com/maps/search/?api=1&query=St+James%27s+Park+London" },
+                        { time: "14:00", commute: "Tube 🚇", title: "Covent Garden Lunch", desc: "Enjoy lunch and dynamic street photography.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Covent+Garden+London" },
+                        { time: "17:00", title: "Luggage Retrieval", desc: "Head back to Hub London Marylebone.", mapLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone" },
+                        { time: "18:00", commute: "Cab/Tube 🚕", title: "Transit to Euston / Dinner", desc: "Buy dinner and snacks at Euston Station.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" },
+                        { time: "19:30", commute: "Train 🚆", transitNo: "Avanti West", title: "Fast Train to Liverpool", desc: "Board the Avanti West Coast train.", mapLink: "https://www.google.com/maps/search/?api=1&query=Liverpool+Lime+Street+Station" },
+                        { time: "22:00", commute: "Taxi 🚕", title: "Arrival in Liverpool", desc: "Lime Street Station. Short taxi to Aparthotel Adagio.", mapLink: "https://www.google.com/maps/search/?api=1&query=Aparthotel+Adagio+Liverpool+City+Centre" }
                     ]
-                }
-                                {
-                    tabName: "May 9", dateText: "May 9: Match Day & Return South", country: "UK", icon: "🇬🇧",
-                    dateCode: "2026-05-09", coords: { lat: 53.4084, lon: -2.9916 }, // Liverpool
+                },
+                {
+                    tabName: "May 9", dateText: "May 9: Match Day!", country: "UK", icon: "🇬🇧",
                     acc: { 
                         outName: "Aparthotel Adagio (Liverpool)", outLink: "https://www.google.com/maps/search/?api=1&query=Aparthotel+Adagio+Liverpool+City+Centre", 
-                        inName: "London Euston Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" 
+                        inName: "Manchester Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=Manchester+Piccadilly+Station" 
                     },
                     events: [
                         { time: "09:00", commute: "Walk 🚶", title: "Royal Albert Dock Breakfast", desc: "Breakfast and waterfront photography.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Royal+Albert+Dock+Liverpool" },
                         { time: "11:30", commute: "Bus/Taxi 🚌", title: "Head to Anfield", desc: "Soak in the electric pre-match atmosphere at a local pub.", mapLink: "https://www.google.com/maps/search/?api=1&query=Anfield+Stadium+Liverpool" },
                         { time: "12:30", title: "Pre-Match Lunch", desc: "Grab a pie or pub grub before heading to your seats.", isFood: true },
                         { time: "14:00", title: "Match: Liverpool vs Chelsea", desc: "The main event!", mapLink: "https://www.google.com/maps/search/?api=1&query=Anfield+Stadium+Liverpool" },
-                        { time: "17:30", commute: "Taxi/Walk 🚶", title: "Retrieve Luggage", desc: "Navigate the post-match crowds and head back to Aparthotel Adagio to grab your bags.", mapLink: "https://www.google.com/maps/search/?api=1&query=Aparthotel+Adagio+Liverpool+City+Centre" },
-                        { time: "18:45", commute: "Train 🚆", transitNo: "Avanti West Coast", title: "Train to London Euston", desc: "Board the evening high-speed train straight back to London.", mapLink: "https://www.google.com/maps/search/?api=1&query=Liverpool+Lime+Street+Station" },
-                        { time: "21:15", title: "Check-in at Euston", desc: "Arrive in London, check into your hotel near Euston or King's Cross, and rest.", mapLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" }
+                        { time: "18:00", commute: "Train 🚆", transitNo: "Local Rail", title: "Train to Manchester", desc: "Board local train from Liverpool to Manchester.", mapLink: "https://www.google.com/maps/search/?api=1&query=Liverpool+Lime+Street+Station" },
+                        { time: "19:45", title: "Manchester Dinner", desc: "Check in and grab a late dinner in the city.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Manchester+Piccadilly+Station" }
                     ]
                 },
                 {
-                    tabName: "May 10", dateText: "May 10: Markets & Skyline", country: "UK", icon: "🇬🇧",
-                    dateCode: "2026-05-10", coords: { lat: 51.5072, lon: -0.1276 }, // London
+                    tabName: "May 10", dateText: "May 10: Prague Arrival", country: "UK → CZ", icon: "🇬🇧 / 🇨🇿",
                     acc: { 
-                        outName: "London Euston Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London", 
-                        inName: "London Euston Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" 
-                    },
-                    events: [
-                        { time: "09:00", commute: "Tube 🚇", title: "Notting Hill & Portobello", desc: "Photograph the colorful pastel houses and the famous Portobello Road Market before it gets too crowded.", mapLink: "https://www.google.com/maps/search/Portobello+Road+Market+London" },
-                        { time: "12:00", commute: "Tube 🚇", title: "Camden Town Lunch", desc: "Grab incredible global street food by the Regent's Canal locks.", isFood: true, mapLink: "https://www.google.com/maps/search/Camden+Lock+Market+London" },
-                        { time: "15:00", commute: "Boat ⛴️", transitNo: "Thames Clipper", title: "Uber Boat to Greenwich", desc: "Take the scenic river route down to Greenwich. Epic views of the city from the water.", mapLink: "https://www.google.com/maps/search/Greenwich+Pier+London" },
-                        { time: "17:00", commute: "Hike 🥾", title: "Royal Observatory Sunset", desc: "Walk up the hill in Greenwich Park for an epic, sweeping sunset view of the modern London skyline.", mapLink: "https://www.google.com/maps/search/Royal+Observatory+Greenwich" },
-                        { time: "19:00", commute: "Tube/DLR 🚇", title: "Dinner & Return", desc: "Grab dinner in Greenwich or central London before heading back to the hotel.", isFood: true }
-                    ]
-                },
-                {
-                    tabName: "May 11", dateText: "May 11: Prague Arrival", country: "UK → CZ", icon: "🇬🇧 / 🇨🇿",
-                    dateCode: "2026-05-11", coords: { lat: 50.0755, lon: 14.4378 }, // Prague
-                    acc: { 
-                        outName: "London Euston Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London", 
+                        outName: "Manchester Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=Manchester+Piccadilly+Station", 
+                        // 🏨 NEW: Confirmed Hotel Address
                         inName: "4 Lázenská, Prague", inLink: "https://www.google.com/maps/search/?api=1&query=4+Lázenská,+Prague,+Hlavní+mesto+Praha,+118+00" 
                     },
                     events: [
-                        { time: "Morn", commute: "Train/Tube 🚇", title: "Transit to London Airport", desc: "Morning transit from Euston to the airport.", mapLink: "https://www.google.com/maps/search/London+Airport" },
-                        { time: "12:00", commute: "Flight ✈️", transitNo: "<a href='https://www.google.com/search?q=Ryanair+flight+London+to+Prague' target='_blank'>RYANAIR ↗</a>", title: "Flight to Prague", desc: "Ryanair Flight to PRG. Get ready for a massive change in architecture!", mapLink: "https://www.google.com/search?q=Ryanair+flight+London+to+Prague" },
+                        { time: "Morn", commute: "Train/Taxi 🚕", title: "Transit to MAN", desc: "Morning transit to Manchester Airport.", mapLink: "https://www.google.com/maps/search/?api=1&query=Manchester+Airport" },
+                        // ✈️ NEW: Clickable Ryanair Search Link
+                        { time: "12:00", commute: "Flight ✈️", transitNo: "<a href='https://www.google.com/search?q=Ryanair+flight+Manchester+to+Prague' target='_blank'>RYANAIR ↗</a>", title: "Flight to Prague", desc: "Ryanair Flight to PRG. Get ready for a massive change in architecture!", mapLink: "https://www.google.com/search?q=Ryanair+flight+Manchester+to+Prague" },
                         { time: "15:00", commute: "Bus/Uber 🚌", transitNo: "Airport Express", title: "Arrival & Transit", desc: "Land at PRG. Take the Airport Express (AE) bus or direct Uber to Malá Strana.", mapLink: "https://www.google.com/maps/search/?api=1&query=Vaclav+Havel+Airport+Prague" },
                         { time: "16:30", commute: "Walk 🚶", title: "Check-in & Drop Bags", desc: "Settle into your hotel at 4 Lázenská.", mapLink: "https://www.google.com/maps/search/?api=1&query=4+Lázenská,+Prague,+Hlavní+mesto+Praha,+118+00" },
                         { time: "17:30", commute: "Walk 🚶", title: "Old Town Square", desc: "Cross the river. Capture the Astronomical Clock and Týn Church.", mapLink: "https://www.google.com/maps/search/?api=1&query=Old+Town+Square+Prague" },
@@ -103,8 +106,7 @@
                     ]
                 },
                 {
-                    tabName: "May 12", dateText: "May 12: The Heights & Cathedral", country: "CZ", icon: "🇨🇿",
-                    dateCode: "2026-05-12", coords: { lat: 50.0755, lon: 14.4378 }, // Prague
+                    tabName: "May 11", dateText: "May 11: The Heights & Cathedral", country: "CZ", icon: "🇨🇿",
                     acc: { 
                         outName: "4 Lázenská, Prague", outLink: "https://www.google.com/maps/search/?api=1&query=4+Lázenská,+Prague,+Hlavní+mesto+Praha,+118+00", 
                         inName: "4 Lázenská, Prague", inLink: "https://www.google.com/maps/search/?api=1&query=4+Lázenská,+Prague,+Hlavní+mesto+Praha,+118+00" 
@@ -117,8 +119,7 @@
                     ]
                 },
                 {
-                    tabName: "May 13", dateText: "May 13: Baroque Library & Fortress", country: "CZ", icon: "🇨🇿",
-                    dateCode: "2026-05-13", coords: { lat: 50.0755, lon: 14.4378 }, // Prague
+                    tabName: "May 12", dateText: "May 12: Baroque Library & Fortress", country: "CZ", icon: "🇨🇿",
                     acc: { 
                         outName: "4 Lázenská, Prague", outLink: "https://www.google.com/maps/search/?api=1&query=4+Lázenská,+Prague,+Hlavní+mesto+Praha,+118+00", 
                         inName: "4 Lázenská, Prague", inLink: "https://www.google.com/maps/search/?api=1&query=4+Lázenská,+Prague,+Hlavní+mesto+Praha,+118+00" 
@@ -130,8 +131,7 @@
                     ]
                 },
                 {
-                    tabName: "May 14", dateText: "May 14: To the Medieval Town", country: "CZ", icon: "🇨🇿",
-                    dateCode: "2026-05-14", coords: { lat: 48.8127, lon: 14.3175 }, // Český Krumlov
+                    tabName: "May 13", dateText: "May 13: To the Medieval Town", country: "CZ", icon: "🇨🇿",
                     acc: { 
                         outName: "4 Lázenská, Prague", outLink: "https://www.google.com/maps/search/?api=1&query=4+Lázenská,+Prague,+Hlavní+mesto+Praha,+118+00", 
                         inName: "Vnitřní Město Hotel (TBC)", inLink: "https://maps.app.goo.gl/example52" 
@@ -140,14 +140,13 @@
                         { time: "08:30", commute: "Walk 🚶", title: "Final Morning in Prague", desc: "Enjoy a relaxed coffee and a final stroll through the quiet streets of Malá Strana." },
                         { time: "10:15", commute: "Tram 🚋", transitNo: "12 / 20 / 22", title: "Transit to Na Knížecí", desc: "Take a direct southbound Tram directly to the Anděl stop. Walk 2 mins to the bus terminal.", mapLink: "https://maps.app.goo.gl/example53" },
                         { time: "10:45", title: "Platform 1", desc: "Arrive at Na Knížecí Platform 1 and load your luggage onto the bus." },
-                        { time: "11:00", commute: "Bus 🚌", transitNo: "RegioJet", title: "The RegioJet Bus", desc: "Relax and enjoy the scenic drive south to Český Krumlov.", mapLink: "https://www.google.com/maps/search/?api=1&query=Cesky+Krumlov" },
+                        { time: "11:00", commute: "Bus 🚌", transitNo: "RegioJet", title: "The RegioJet Bus", desc: "Relax and enjoy the scenic drive south to Český Krumlov, AN.", mapLink: "https://www.google.com/maps/search/?api=1&query=Cesky+Krumlov" },
                         { time: "14:00", commute: "Walk 🚶", title: "Check-in to CK", desc: "Walk into the pedestrian-only Vnitřní Město (Inner Town) and check into your hotel.", mapLink: "https://maps.app.goo.gl/example52" },
                         { time: "16:00", commute: "Walk 🚶", title: "CK Evening Photography", desc: "The day-trippers leave at 16:00. Walk up to the Castle Cloak Bridge for a stunning sunset shot.", mapLink: "https://maps.app.goo.gl/example54" }
                     ]
                 },
                 {
-                    tabName: "May 15", dateText: "May 15: The Vienna Shift", country: "CZ → AT", icon: "🇨🇿 / 🇦🇹",
-                    dateCode: "2026-05-15", coords: { lat: 48.2082, lon: 16.3738 }, // Vienna
+                    tabName: "May 14", dateText: "May 14: The Vienna Shift", country: "CZ → AT", icon: "🇨🇿 / 🇦🇹",
                     acc: { 
                         outName: "Vnitřní Město Hotel (TBC)", outLink: "https://maps.app.goo.gl/example52", 
                         inName: "Vienna Hauptbahnhof Hotel (TBC)", inLink: "https://maps.app.goo.gl/example55" 
@@ -158,26 +157,11 @@
                         { time: "10:00", commute: "Shuttle 🚐", transitNo: "CK/Bean Shuttle", title: "CK Shuttle to Vienna", desc: "Pre-booked shared shuttle picks you up directly from your hotel. Drive straight across the border.", mapLink: "https://maps.app.goo.gl/example55" },
                         { time: "14:30", commute: "U-Bahn 🚇", title: "Schönbrunn Palace Gardens", desc: "Drop bags and take the U-Bahn straight to Schönbrunn. Hike up to the Gloriette for sweeping views!", mapLink: "https://maps.app.goo.gl/example56" }
                     ]
-                },
-                {
-                    tabName: "May 16", dateText: "May 16: Exploring Vienna", country: "AT", icon: "🇦🇹",
-                    dateCode: "2026-05-16", coords: { lat: 48.2082, lon: 16.3738 }, // Vienna
-                    acc: { 
-                        outName: "Vienna Hauptbahnhof Hotel (TBC)", outLink: "https://maps.app.goo.gl/example55", 
-                        inName: "Vienna Hauptbahnhof Hotel (TBC)", inLink: "https://maps.app.goo.gl/example55" 
-                    },
-                    events: [
-                        { time: "09:00", commute: "Walk/Tram 🚋", title: "Vienna City Center", desc: "Explore the historic Innere Stadt, St. Stephen's Cathedral, and grab a classic Viennese coffee.", mapLink: "https://www.google.com/maps/search/Innere+Stadt+Vienna" },
-                        { time: "13:00", title: "Viennese Schnitzel Lunch", desc: "Enjoy a traditional lunch in the city.", isFood: true },
-                        { time: "15:00", commute: "Walk 🚶", title: "Hofburg & Museums", desc: "Afternoon exploring the grand architecture of the Hofburg Palace exterior and museum quarter.", mapLink: "https://www.google.com/maps/search/Hofburg+Vienna" },
-                        { time: "19:00", title: "Farewell Vienna Dinner", desc: "Final dinner in the city before your road trip begins tomorrow!", isFood: true }
-                    ]
-                },
-                {
+                }, 
+                                {
                     tabName: "May 17", dateText: "May 17: The Road Trip Begins", country: "AT", icon: "🇦🇹",
-                    dateCode: "2026-05-17", coords: { lat: 47.5622, lon: 13.6493 }, // Obertraun
                     acc: { 
-                        outName: "Vienna Hauptbahnhof Hotel (TBC)", outLink: "https://maps.app.goo.gl/example55", 
+                        outName: "Vienna Hotel (TBC)", outLink: "", 
                         inName: "Obertraun Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=Obertraun+Hotel" 
                     },
                     events: [
@@ -188,7 +172,6 @@
                 },
                 {
                     tabName: "May 18", dateText: "May 18: Peaks & Glaciers", country: "AT", icon: "🇦🇹",
-                    dateCode: "2026-05-18", coords: { lat: 47.7667, lon: 13.3667 }, // St. Gilgen
                     acc: { 
                         outName: "Obertraun Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=Obertraun", 
                         inName: "St. Gilgen Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=St.+Gilgen" 
@@ -202,7 +185,6 @@
                 },
                 {
                     tabName: "May 19", dateText: "May 19: The 11 Lakes", country: "AT", icon: "🇦🇹",
-                    dateCode: "2026-05-19", coords: { lat: 47.7667, lon: 13.3667 }, // St. Gilgen
                     acc: { 
                         outName: "St. Gilgen Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=St.+Gilgen", 
                         inName: "St. Gilgen Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=St.+Gilgen" 
@@ -219,7 +201,6 @@
                 },
                 {
                     tabName: "May 20", dateText: "May 20: Into Germany", country: "AT → DE", icon: "🇦🇹 / 🇩🇪",
-                    dateCode: "2026-05-20", coords: { lat: 47.5833, lon: 12.9833 }, // Königssee
                     acc: { 
                         outName: "St. Gilgen Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=St.+Gilgen", 
                         inName: "Königssee Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=Berchtesgaden" 
@@ -232,7 +213,6 @@
                 },
                 {
                     tabName: "May 21", dateText: "May 21: The Royal Castles", country: "DE", icon: "🇩🇪",
-                    dateCode: "2026-05-21", coords: { lat: 47.5696, lon: 10.7004 }, // Füssen
                     acc: { 
                         outName: "Königssee Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=Berchtesgaden", 
                         inName: "Füssen Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=Fussen" 
@@ -245,7 +225,6 @@
                 },
                 {
                     tabName: "May 22", dateText: "May 22: Neuschwanstein", country: "DE", icon: "🇩🇪",
-                    dateCode: "2026-05-22", coords: { lat: 47.5696, lon: 10.7004 }, // Füssen
                     acc: { 
                         outName: "Füssen Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=Fussen", 
                         inName: "Füssen Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=Fussen" 
@@ -258,7 +237,6 @@
                 },
                 {
                     tabName: "May 23", dateText: "May 23: Munich City", country: "DE", icon: "🇩🇪",
-                    dateCode: "2026-05-23", coords: { lat: 48.1351, lon: 11.5820 }, // Munich
                     acc: { 
                         outName: "Füssen Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=Fussen", 
                         inName: "Munich Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=Munich" 
@@ -269,45 +247,10 @@
                         { time: "13:30", commute: "Walk/Bike 🚲", title: "English Garden", desc: "Perfect for hiking or renting a bike. Watch the river surfers and explore the massive park.", mapLink: "https://www.google.com/maps/search/?api=1&query=Englischer+Garten+Munich" },
                         { time: "17:00", title: "Shopping & Beerhouse", desc: "Finish the day with some shopping and a massive pretzel and beer at a traditional beerhouse like Hofbräuhaus!", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Hofbrauhaus+Munich" }
                     ]
-                },
-                {
-                    tabName: "May 24", dateText: "May 24: Relaxing City Day", country: "DE", icon: "🇩🇪",
-                    dateCode: "2026-05-24", coords: { lat: 48.1351, lon: 11.5820 }, // Munich
-                    acc: { 
-                        outName: "Munich Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=Munich", 
-                        inName: "Munich Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=Munich" 
-                    },
-                    events: [
-                        { time: "10:00", commute: "Walk 🚶", title: "Isar River Walks", desc: "Start the day slow with a scenic walk along the Isar River.", mapLink: "https://www.google.com/search?q=Isar+River+Munich" },
-                        { time: "13:00", title: "Outdoor Beer Garden", desc: "Enjoy lunch in a classic outdoor beer garden.", isFood: true, mapLink: "https://www.google.com/search?q=Munich+Beer+Gardens" },
-                        { time: "15:00", commute: "Walk 🚶", title: "Final City Relaxation", desc: "A completely free afternoon to wander, shop for souvenirs, and soak up the last bits of Europe before heading home." }
-                    ]
-                },
-                {
-                    tabName: "May 25", dateText: "May 25: Heading Home", country: "DE → HKG", icon: "🇩🇪 / 🇭🇰",
-                    dateCode: "2026-05-25", coords: { lat: 48.3538, lon: 11.7861 }, // MUC Airport
-                    acc: { 
-                        outName: "Munich Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=Munich", 
-                        inName: "Home (Hong Kong)", inLink: "" 
-                    },
-                    events: [
-                        { time: "Day", commute: "Train/Taxi 🚕", title: "Head to MUC Airport", desc: "Check out of the hotel and transit to Munich Airport.", mapLink: "https://www.google.com/search?q=Munich+Airport" },
-                        { time: "TBC", commute: "Flight ✈️", transitNo: "<a href='https://www.google.com/search?q=Flight+CX300' target='_blank'>CX300 ↗</a>", title: "Flight CX300", desc: "Board the flight back to Hong Kong. What an incredible 20 days!", mapLink: "https://www.google.com/search?q=Flight+CX300" }
-                    ]
                 }
-
-                // PASTE THE REST OF YOUR DAYS HERE...
-                // Make sure to add dateCode and coords to each one!
+                
             ]
         };
-
-        // Coordinates cheat sheet for you to use on your other days:
-        // Liverpool: coords: { lat: 53.4084, lon: -2.9916 }
-        // Prague: coords: { lat: 50.0755, lon: 14.4378 }
-        // Český Krumlov: coords: { lat: 48.8127, lon: 14.3175 }
-        // Vienna: coords: { lat: 48.2082, lon: 16.3738 }
-        // Hallstatt/Obertraun: coords: { lat: 47.5622, lon: 13.6493 }
-        // Munich: coords: { lat: 48.1351, lon: 11.5820 }
 
         // =========================================================================
         // 🛑 DO NOT TOUCH THE CODE BELOW THIS LINE 
@@ -345,51 +288,6 @@
         const tabsContainer = document.getElementById('tabs-container');
         const contentContainer = document.getElementById('itinerary-content');
 
-        // Weather API Logic
-        function getWeatherEmoji(code) {
-            if ([0, 1].includes(code)) return "☀️";
-            if ([2, 3].includes(code)) return "⛅";
-            if ([45, 48].includes(code)) return "🌫️";
-            if ([51, 53, 55, 56, 57].includes(code)) return "🌦️";
-            if ([61, 63, 65, 66, 67, 80, 81, 82].includes(code)) return "🌧️";
-            if ([71, 73, 75, 77].includes(code)) return "❄️";
-            if ([95, 96, 99].includes(code)) return "⛈️";
-            return "🌡️";
-        }
-
-        async function loadWeather(dayIndex, dateCode, coords) {
-            const widget = document.getElementById(`weather-widget`);
-            if (!coords || !dateCode) return;
-
-            const targetDate = new Date(dateCode);
-            const today = new Date();
-            const diffDays = Math.ceil((targetDate - today) / (1000 * 60 * 60 * 24));
-
-            // If trip is more than 14 days away, show countdown
-            if (diffDays > 14) {
-                 widget.innerHTML = `<div class="bg-slate-100 text-slate-500 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide flex items-center gap-1.5 border border-slate-200 shadow-sm"><span>📅</span> Forecast available ${diffDays - 14} days prior</div>`;
-                 return;
-            }
-            
-            // If within 14 days, fetch live API
-            try {
-                const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${coords.lat}&longitude=${coords.lon}&daily=weathercode,temperature_2m_max,temperature_2m_min&timezone=auto&start_date=${dateCode}&end_date=${dateCode}`);
-                const data = await res.json();
-                
-                if (data.daily && data.daily.time.length > 0) {
-                    const maxT = Math.round(data.daily.temperature_2m_max[0]);
-                    const minT = Math.round(data.daily.temperature_2m_min[0]);
-                    const emoji = getWeatherEmoji(data.daily.weathercode[0]);
-                    
-                    widget.innerHTML = `<div class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-sm border border-sky-200 tracking-wide">
-                        <span class="text-base">${emoji}</span> ${minT}°C – ${maxT}°C
-                    </div>`;
-                }
-            } catch (e) {
-                widget.innerHTML = `<span class="text-xs text-slate-400">Weather offline</span>`;
-            }
-        }
-
         function renderTabs() {
             tabsContainer.innerHTML = tripData.days.map((day, index) => `
                 <button onclick="showDay(${index})" id="tab-${index}" class="px-4 py-2 rounded-full whitespace-nowrap font-semibold text-sm transition-all duration-200 flex items-center space-x-2 focus:outline-none border border-transparent">
@@ -414,23 +312,33 @@
 
             const day = tripData.days[dayIndex];
             
+            // Accommodation Logic
             const isSameHotel = day.acc.outName === day.acc.inName;
             const topAccHTML = isSameHotel 
-                ? `<div class="flex items-center gap-3"><span class="text-blue-500 font-bold text-[10px] uppercase w-16 text-right tracking-wider">Stay</span><a href="${day.acc.inLink}" target="_blank" class="font-bold text-slate-800 hover:text-blue-600 truncate">${day.acc.inName}</a></div>`
-                : `<div class="flex flex-col gap-2.5"><div class="flex items-center gap-3"><span class="text-slate-400 font-bold text-[10px] uppercase w-16 text-right tracking-wider">Check Out</span><a href="${day.acc.outLink}" target="_blank" class="font-bold text-slate-600 hover:text-blue-600 truncate">${day.acc.outName}</a></div><div class="w-full h-px bg-blue-100"></div><div class="flex items-center gap-3"><span class="text-blue-600 font-bold text-[10px] uppercase w-16 text-right tracking-wider">Check In</span><a href="${day.acc.inLink}" target="_blank" class="font-bold text-blue-900 hover:text-blue-600 truncate">${day.acc.inName}</a></div></div>`;
+                ? `<div class="flex items-center gap-3">
+                     <span class="text-blue-500 font-bold text-[10px] uppercase w-16 text-right tracking-wider">Stay</span>
+                     <a href="${day.acc.inLink}" target="_blank" class="font-bold text-slate-800 hover:text-blue-600 truncate">${day.acc.inName}</a>
+                   </div>`
+                : `<div class="flex flex-col gap-2.5">
+                     <div class="flex items-center gap-3">
+                       <span class="text-slate-400 font-bold text-[10px] uppercase w-16 text-right tracking-wider">Check Out</span>
+                       <a href="${day.acc.outLink}" target="_blank" class="font-bold text-slate-600 hover:text-blue-600 truncate">${day.acc.outName}</a>
+                     </div>
+                     <div class="w-full h-px bg-blue-100"></div>
+                     <div class="flex items-center gap-3">
+                       <span class="text-blue-600 font-bold text-[10px] uppercase w-16 text-right tracking-wider">Check In</span>
+                       <a href="${day.acc.inLink}" target="_blank" class="font-bold text-blue-900 hover:text-blue-600 truncate">${day.acc.inName}</a>
+                     </div>
+                   </div>`;
 
             contentContainer.innerHTML = `
                 <div class="max-w-md mx-auto fade-slide-up">
                     
                     <div class="mb-5 px-2">
                         <h2 class="text-2xl font-extrabold text-slate-900">${day.dateText}</h2>
-                        
-                        <div class="flex justify-between items-center mt-2">
-                            <p class="text-slate-500 font-medium text-sm flex items-center gap-2">
-                                <span>${day.icon}</span> ${day.country}
-                            </p>
-                            <div id="weather-widget"></div> 
-                        </div>
+                        <p class="text-slate-500 font-medium text-sm mt-1 flex items-center gap-2">
+                            <span>${day.icon}</span> ${day.country}
+                        </p>
                     </div>
 
                     <div class="bg-white border border-blue-100 rounded-2xl p-4 mb-8 shadow-sm relative overflow-hidden">
@@ -443,24 +351,38 @@
                             ${day.events.map(event => `
                                 <li class="relative pl-6">
                                     <div class="absolute left-[-29px] top-1.5 w-3 h-3 rounded-full border-2 border-white shadow-sm box-content ${event.isFood ? 'bg-orange-400 ring-4 ring-orange-50' : 'bg-slate-900 ring-2 ring-slate-100'} z-10"></div>
+                                    
                                     <div class="flex flex-wrap items-center gap-2 mb-2">
                                         <span class="inline-block px-2.5 py-1 ${event.isFood ? 'bg-orange-50 text-orange-700' : 'bg-slate-100 text-slate-700'} text-xs font-bold rounded shadow-sm">${event.time}</span>
                                         ${event.commute ? `<span class="text-[10px] font-bold text-slate-500 uppercase tracking-wide bg-slate-50 border border-slate-200 px-2 py-1 rounded">${event.commute}</span>` : ''}
                                         ${event.transitNo ? `<span class="text-[10px] font-bold text-blue-700 bg-blue-50 border border-blue-200 px-2 py-1 rounded uppercase tracking-wide">${event.transitNo}</span>` : ''}
                                     </div>
+                                    
                                     <div class="mt-2">
-                                        ${event.mapLink ? `<a href="${event.mapLink}" target="_blank" class="font-bold ${event.isFood ? 'text-orange-900 hover:text-orange-600' : 'text-slate-900 hover:text-blue-600'} text-lg leading-tight flex items-center gap-1.5 group">${event.title}</a>` : `<p class="font-bold ${event.isFood ? 'text-orange-900' : 'text-slate-900'} text-lg leading-tight">${event.title}</p>`}
+                                        ${event.mapLink ? 
+                                          `<a href="${event.mapLink}" target="_blank" class="font-bold ${event.isFood ? 'text-orange-900 hover:text-orange-600' : 'text-slate-900 hover:text-blue-600'} text-lg leading-tight flex items-center gap-1.5 group">
+                                            ${event.title} 
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 ${event.isFood ? 'text-orange-300' : 'text-slate-300'} transition"><path fill-rule="evenodd" d="M9.69 18.933l.003.001C9.89 19.02 10 19 10 19s.11 0 .308-.066l.002-.001.006-.003.018-.008a5.741 5.741 0 00.281-.14c.186-.096.446-.24.757-.433.62-.384 1.445-.966 2.274-1.765C15.302 14.988 17 12.493 17 9A7 7 0 103 9c0 3.492 1.698 5.988 3.355 7.584a13.731 13.731 0 002.273 1.765 11.842 11.842 0 00.976.544l.02.01.006.004zM10 11.25a2.25 2.25 0 100-4.5 2.25 2.25 0 000 4.5z" clip-rule="evenodd" /></svg>
+                                           </a>` : 
+                                          `<p class="font-bold ${event.isFood ? 'text-orange-900' : 'text-slate-900'} text-lg leading-tight">${event.title}</p>`
+                                        }
                                         <p class="text-sm text-slate-500 mt-1.5 font-medium leading-relaxed">${event.desc}</p>
                                     </div>
                                 </li>
                             `).join('')}
                         </ul>
                     </div>
+
+                    <div class="bg-slate-900 rounded-2xl p-5 shadow-md flex items-center gap-4 border border-slate-700">
+                        <span class="text-3xl drop-shadow-md">🌙</span>
+                        <div class="flex-1 min-w-0">
+                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-0.5">Night Stay</p>
+                            <a href="${day.acc.inLink}" target="_blank" class="font-bold text-white hover:text-blue-300 leading-tight block truncate">${day.acc.inName}</a>
+                        </div>
+                    </div>
+
                 </div>
             `;
-
-            // Call the weather API function after HTML is loaded
-            loadWeather(dayIndex, day.dateCode, day.coords);
         }
 
         renderTabs();
