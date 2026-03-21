@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Europe 2026 - Notes & Bookings</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; }
+        .fade-slide-up { animation: fadeSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+        /* Hide scrollbar */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <header class="bg-white px-6 pt-12 pb-4 shrink-0 border-b border-slate-200 z-50 sticky top-0">
+        <a href="index.html" class="text-blue-600 font-bold text-sm flex items-center gap-1 mb-3 hover:text-blue-700 transition">
+            <span>←</span> Back to Itinerary
+        </a>
+        <div class="flex justify-between items-end">
+            <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight">Notes & Tickets</h1>
+            <span class="text-3xl">📝</span>
+        </div>
+    </header>
+
+    <main class="flex-grow px-4 py-6 w-full max-w-md mx-auto pb-32">
+
+        <form id="note-form" class="bg-white rounded-2xl p-5 shadow-sm border border-slate-200 mb-6 fade-slide-up">
+            <div class="mb-4">
+                <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Title / Event</label>
+                <input type="text" id="n-title" required placeholder="e.g. Neuschwanstein Tickets" class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm font-bold text-slate-700 mt-1 focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+
+            <div class="mb-4">
+                <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Details (Ref No., Time, Rules)</label>
+                <textarea id="n-desc" rows="3" placeholder="e.g. Booking Ref: 894572. Meet at gate 10 mins early." class="w-full bg-slate-50 border border-slate-200 rounded-lg p-2.5 text-sm font-medium text-slate-700 mt-1 focus:ring-2 focus:ring-blue-500 outline-none resize-none"></textarea>
+            </div>
+
+            <div class="mb-5">
+                <label class="text-[10px] font-bold text-slate-400 uppercase tracking-wide">Attach Screenshot / Photo</label>
+                <input type="file" id="n-image" accept="image/*" class="w-full text-sm text-slate-500 mt-1 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-bold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 transition">
+                <p class="text-[9px] text-slate-400 mt-1.5 italic">Images are highly compressed to save offline phone storage.</p>
+            </div>
+
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl transition shadow-sm">Save Note 💾</button>
+        </form>
+
+        <div id="notes-container" class="space-y-4 fade-slide-up" style="animation-delay: 0.1s;">
+            </div>
+
+    </main>
+
+    <script>
+        // Load data from phone's browser storage
+        let tripNotes = JSON.parse(localStorage.getItem('europeTripNotes')) || [];
+
+        // 🗜️ HTML5 Canvas Image Compressor
+        function compressImage(file, callback) {
+            if (!file) { callback(null); return; }
+            
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = event => {
+                const img = new Image();
+                img.src = event.target.result;
+                img.onload = () => {
+                    const canvas = document.createElement('canvas');
+                    const MAX_WIDTH = 600; // Shrink to max 600px width
+                    let scaleSize = 1;
+                    if (img.width > MAX_WIDTH) { scaleSize = MAX_WIDTH / img.width; }
+                    
+                    canvas.width = img.width * scaleSize;
+                    canvas.height = img.height * scaleSize;
+                    
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                    
+                    // Convert to highly compressed JPEG (0.6 quality)
+                    const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.6);
+                    callback(compressedDataUrl);
+                }
+            }
+        }
+
+        document.getElementById('note-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop page reload
+            
+            const title = document.getElementById('n-title').value;
+            const desc = document.getElementById('n-desc').value;
+            const imageFile = document.getElementById('n-image').files[0];
+
+            if (!title) return;
+
+            // Compress image (if exists) then save
+            compressImage(imageFile, (compressedBase64) => {
+                tripNotes.unshift({ 
+                    id: Date.now(), 
+                    title: title, 
+                    desc: desc, 
+                    image: compressedBase64,
+                    date: new Date().toLocaleDateString() 
+                });
+                
+                // Save to local storage
+                try {
+                    localStorage.setItem('europeTripNotes', JSON.stringify(tripNotes));
+                } catch (e) {
+                    alert("Storage full! Please delete some old photos to free up space.");
+                }
+                
+                // Reset form
+                document.getElementById('n-title').value = '';
+                document.getElementById('n-desc').value = '';
+                document.getElementById('n-image').value = '';
+                
+                renderNotes();
+            });
+        });
+
+        function deleteNote(id) {
+            if(confirm("Delete this note?")) {
+                tripNotes = tripNotes.filter(n => n.id !== id);
+                localStorage.setItem('europeTripNotes', JSON.stringify(tripNotes));
+                renderNotes();
+            }
+        }
+
+        function renderNotes() {
+            const container = document.getElementById('notes-container');
+            
+            if (tripNotes.length === 0) {
+                container.innerHTML = `<div class="text-center py-10"><p class="text-slate-400 font-medium text-sm">No notes or tickets saved yet.</p></div>`;
+                return;
+            }
+
+            container.innerHTML = tripNotes.map(note => `
+                <div class="bg-white rounded-2xl p-4 shadow-sm border border-slate-200 relative overflow-hidden">
+                    <button onclick="deleteNote(${note.id})" class="absolute top-4 right-4 text-slate-300 hover:text-red-500 font-bold text-xl leading-none transition">×</button>
+                    <h3 class="text-lg font-extrabold text-slate-900 pr-6">${note.title}</h3>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wide mb-3">${note.date}</p>
+                    
+                    ${note.desc ? `<p class="text-sm text-slate-600 font-medium whitespace-pre-wrap leading-relaxed mb-4">${note.desc}</p>` : ''}
+                    
+                    ${note.image ? `
+                        <div class="rounded-xl overflow-hidden border border-slate-100 bg-slate-50">
+                            <img src="${note.image}" alt="Attached photo" class="w-full h-auto object-contain max-h-64">
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+
+        renderNotes(); // Initialize
+    </script>
+</body>
+</html>
