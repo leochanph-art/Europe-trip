@@ -30,75 +30,79 @@
                     ]
                 },
                 {
-                    tabName: "May 7", dateText: "May 7: London & Oxford", country: "UK", icon: "🇬🇧",
-                    dateCode: "2026-05-07", coords: { lat: 51.7520, lon: -1.2577 },
-                    acc: { outName: "In Transit (Flight CX251)", outLink: "", inName: "Hub London Marylebone", inLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone" },
+                    tabName: "May 7", dateText: "May 7: Arrival & The West End", country: "UK", icon: "🇬🇧",
+                    dateCode: "2026-05-07", coords: { lat: 51.5072, lon: -0.1276 },
+                    acc: { outName: "Flight CX251", outLink: "", inName: "Hub London Marylebone", inLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone" },
                     events: [
-                        { time: "04:40", commute: "Train 🚇", transitNo: "Elizabeth Line", title: "Land at LHR", desc: "Clear customs, take train to Paddington.", mapLink: "https://www.google.com/maps/search/?api=1&query=Heathrow+Airport+London" },
-                        { time: "06:45", commute: "Walk 🚶", title: "Drop Luggage", desc: "Drop bags at Hub London Marylebone.", mapLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone" },
-                        { time: "07:50", commute: "Train 🚆", transitNo: "GWR", title: "Train to Oxford", desc: "Board the GWR Train.", mapLink: "https://www.google.com/maps/search/?api=1&query=Oxford+Station+UK" },
-                        { time: "09:15", commute: "Walk 🚶", title: "Radcliffe Camera & Bridge of Sighs", desc: "拍攝牛津經典地標與嘆息橋雙人合照。", mapLink: "https://www.google.com/maps/search/?api=1&query=Radcliffe+Camera+Oxford" },
-                        { time: "10:00", title: "Bodleian Library & St Mary's", desc: "登上塔樓俯瞰尖塔天際線。", mapLink: "https://www.google.com/maps/search/?api=1&query=University+Church+of+St+Mary+the+Virgin+Oxford" },
-                        { time: "11:30", commute: "Walk 🚶", title: "Covered Market Lunch", desc: "拍攝生活感街拍，品嚐英式肉餡餅。", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Covered+Market+Oxford" },
-                        { time: "13:15", title: "Christ Church", desc: "霍格華茲食堂原型，並在 Meadow 拍攝自然風景。", mapLink: "https://www.google.com/maps/search/?api=1&query=Christ+Church+Oxford" },
-                        { time: "16:31", commute: "Train 🚆", transitNo: "GWR", title: "Train to London", desc: "Board the return GWR Train." },
-                        { time: "18:50", title: "Dinner in Soho", desc: "Grab quick street food or a fast bite before the show.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Soho+London" },
-                        { time: "19:30", title: "Phantom of the Opera", desc: "Watch the classic show at His Majesty's Theatre.", mapLink: "https://www.google.com/maps/search/?api=1&query=His+Majesty%27s+Theatre+London" }
+                        { time: "04:40", commute: "Flight ✈️", title: "Land at LHR", desc: "Land at LHR on CX251. Clear customs and collect your luggage.", mapLink: "https://www.google.com/maps/search/?api=1&query=Heathrow+Airport+London" },
+                        { time: "05:30", commute: "Train 🚇", transitNo: "Elizabeth Line", title: "Elizabeth Line to Paddington", desc: "Board the Elizabeth Line directly to London Paddington." },
+                        { time: "06:30", commute: "Walk 🚶", title: "Drop Luggage", desc: "Walk from Paddington to your hotel to drop off your heavy bags.", mapLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone" },
+                        { time: "07:30", commute: "Tube 🚇", title: "Tower Bridge Sunrise", desc: "Take the Tube to Tower Hill. Walk across Tower Bridge as the sun rises to capture clean, empty architectural lines.", mapLink: "https://www.google.com/maps/search/?api=1&query=Tower+Bridge+London" },
+                        { time: "08:30", commute: "Walk 🚶", title: "South Bank & Borough Market", desc: "Walk the South Bank. Grab an artisan coffee and a hot breakfast sandwich.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Borough+Market+London" },
+                        { time: "10:15", commute: "Tube 🚇", transitNo: "Jubilee Line", title: "Buckingham Palace", desc: "Take the Jubilee Line to Green Park. Secure your spot on the Victoria Memorial steps by 10:30 to photograph the Changing of the Guard.", mapLink: "https://www.google.com/maps/search/?api=1&query=Victoria+Memorial+Buckingham+Palace+London" },
+                        { time: "11:45", commute: "Walk 🚶", title: "Westminster Walk", desc: "Walk through St James's Park. Photograph Big Ben, Parliament, and the stunning exterior of Westminster Abbey.", mapLink: "https://www.google.com/maps/search/?api=1&query=Big+Ben+London" },
+                        { time: "12:30", commute: "Walk 🚶", transitNo: "<a href='https://mail.google.com/mail/u/0/#search/Churchill+War+Rooms' target='_blank'>EMAIL 📧</a>", title: "Churchill War Rooms", desc: "Explore the underground WWII bunkers (pre-booked tickets mandatory).", mapLink: "https://www.google.com/maps/search/?api=1&query=Hong+Kong+International+Airport6" },
+                        { time: "15:00", commute: "Tube/Walk 🚇", title: "Check-in & Freshen Up", desc: "Return to the Hub Marylebone. Officially check into your room, take a shower, and change clothes." },
+                        { time: "17:00", commute: "Walk 🚶", title: "Soho & Chinatown Dinner", desc: "Capture dynamic street photos and grab a fast, high-quality pre-theatre dinner.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Soho+London" },
+                        { time: "19:00", commute: "Walk 🚶", title: "Phantom of the Opera", desc: "Walk to His Majesty's Theatre. Take seats by 19:15 for the 19:30 performance. Tube back to the hotel afterward.", mapLink: "https://www.google.com/maps/search/?api=1&query=His+Majesty%27s+Theatre+London" }
                     ]
                 },
                 {
-                    tabName: "May 8", dateText: "May 8: London Icons", country: "UK", icon: "🇬🇧",
+                    tabName: "May 8", dateText: "May 8: Baker St & Human History", country: "UK", icon: "🇬🇧",
                     dateCode: "2026-05-08", coords: { lat: 51.5072, lon: -0.1276 },
                     acc: { outName: "Hub London Marylebone", outLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone", inName: "Aparthotel Adagio (Liverpool)", inLink: "https://www.google.com/maps/search/?api=1&query=Aparthotel+Adagio+Liverpool+City+Centre" },
                     events: [
-                        { time: "07:00", commute: "Tube 🚇", title: "Tower Bridge Sunrise Shoot", desc: "Capture clean couple portraits before the commuter rush.", mapLink: "https://www.google.com/maps/search/?api=1&query=Tower+Bridge+London" },
-                        { time: "08:30", commute: "Walk 🚶", title: "Borough Market Breakfast", desc: "Walk west along the South Bank for artisan coffee.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Borough+Market+London" },
-                        { time: "10:15", commute: "Tube 🚇", transitNo: "Jubilee Line", title: "Buckingham Palace", desc: "Secure an elevated spot by 10:45 AM for the Guard Change.", mapLink: "https://www.google.com/maps/search/?api=1&query=Victoria+Memorial+Buckingham+Palace+London" },
-                        { time: "11:45", commute: "Walk 🚶", title: "St James's Park", desc: "Capture pelicans with the London Eye in the background.", mapLink: "https://www.google.com/maps/search/?api=1&query=St+James%27s+Park+London" },
-                        { time: "14:00", commute: "Tube 🚇", title: "Covent Garden Lunch", desc: "Enjoy lunch and dynamic street photography.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Covent+Garden+London" },
-                        { time: "17:00", title: "Luggage Retrieval", desc: "Head back to Hub London Marylebone.", mapLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone" },
-                        { time: "18:00", commute: "Cab/Tube 🚕", title: "Transit to Euston / Dinner", desc: "Buy dinner and snacks at Euston Station.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" },
-                        { time: "19:30", commute: "Train 🚆", transitNo: "Avanti", title: "Fast Train to Liverpool", desc: "Board the Avanti West Coast train.", mapLink: "https://www.google.com/maps/search/?api=1&query=Liverpool+Lime+Street+Station" },
-                        { time: "22:00", commute: "Taxi 🚕", title: "Arrival in Liverpool", desc: "Lime Street Station. Short taxi to Aparthotel Adagio.", mapLink: "https://www.google.com/maps/search/?api=1&query=Aparthotel+Adagio+Liverpool+City+Centre" }
+                        { time: "08:00", commute: "Walk 🚶", title: "Hyde Park Italian Gardens", desc: "Take a crisp morning walk through Hyde Park to photograph the Italian Gardens.", mapLink: "https://www.google.com/maps/search/?api=1&query=Italian+Gardens+Hyde+Park+London" },
+                        { time: "09:30", commute: "Walk 🚶", title: "Sherlock Holmes Museum", desc: "Walk straight to 221B Baker Street. Visit the museum right as it opens to beat the queues.", mapLink: "https://www.google.com/maps/search/?api=1&query=Hong+Kong+International+Airport7" },
+                        { time: "11:00", commute: "Tube 🚇", title: "The British Museum", desc: "Spend four full hours capturing the Rosetta Stone, Parthenon Sculptures, and the massive geometric glass roof of the Great Court.", mapLink: "https://www.google.com/maps/search/?api=1&query=Hong+Kong+International+Airport8" },
+                        { time: "15:15", commute: "Walk 🚶", title: "Seven Dials Late Lunch", desc: "Photograph the famous converging cobblestone streets and grab a late lunch or afternoon tea.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Hong+Kong+International+Airport9" },
+                        { time: "16:45", commute: "Tube/Walk 🚇", title: "Luggage Retrieval", desc: "Return to the Hub Marylebone to retrieve your heavy luggage.", mapLink: "https://www.google.com/maps/search/?api=1&query=Hub+by+Premier+Inn+London+Marylebone" },
+                        { time: "18:15", commute: "Cab/Tube 🚕", title: "Euston Station & Dinner", desc: "Arrive at London Euston Station. Navigate the platforms and buy dinner snacks for the ride.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" },
+                        { time: "19:30", commute: "Train 🚆", transitNo: "<a href='https://mail.google.com/mail/u/0/#search/Avanti' target='_blank'>EMAIL 📧</a>", title: "Fast Train to Liverpool", desc: "Board the Avanti West Coast high-speed train to Liverpool Lime Street.", mapLink: "https://www.google.com/maps/search/?api=1&query=Liverpool+Lime+Street+Station" },
+                        { time: "22:00", commute: "Walk/Taxi 🚕", title: "Arrival in Liverpool", desc: "Walk to the Aparthotel Adagio Liverpool, check in, and get some rest.", mapLink: "https://www.google.com/maps/search/?api=1&query=Aparthotel+Adagio+Liverpool+City+Centre" }
                     ]
                 },
                 {
-                    tabName: "May 9", dateText: "May 9: Match Day & Return South", country: "UK", icon: "🇬🇧",
+                    tabName: "May 9", dateText: "May 9: The Anfield Atmosphere", country: "UK", icon: "🇬🇧",
                     dateCode: "2026-05-09", coords: { lat: 53.4084, lon: -2.9916 },
                     acc: { outName: "Aparthotel Adagio (Liverpool)", outLink: "https://www.google.com/maps/search/?api=1&query=Aparthotel+Adagio+Liverpool+City+Centre", inName: "London Euston Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" },
                     events: [
-                        { time: "09:00", commute: "Walk 🚶", title: "Royal Albert Dock Breakfast", desc: "Breakfast and waterfront photography.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Royal+Albert+Dock+Liverpool" },
-                        { time: "11:30", commute: "Bus/Taxi 🚌", title: "Head to Anfield", desc: "Soak in the electric pre-match atmosphere at a local pub.", mapLink: "https://www.google.com/maps/search/?api=1&query=Anfield+Stadium+Liverpool" },
-                        { time: "12:30", title: "Pre-Match Lunch", desc: "Grab a pie or pub grub before heading to your seats.", isFood: true },
-                        { time: "14:00", title: "Match: Liverpool vs Chelsea", desc: "The main event!", mapLink: "https://www.google.com/maps/search/?api=1&query=Anfield+Stadium+Liverpool" },
-                        { time: "17:30", commute: "Taxi/Walk 🚶", title: "Retrieve Luggage", desc: "Navigate the post-match crowds and head back to Aparthotel Adagio to grab your bags.", mapLink: "https://www.google.com/maps/search/?api=1&query=Aparthotel+Adagio+Liverpool+City+Centre" },
-                        { time: "18:45", commute: "Train 🚆", transitNo: "Avanti", title: "Train to London Euston", desc: "Board the evening high-speed train straight back to London.", mapLink: "https://www.google.com/maps/search/?api=1&query=Liverpool+Lime+Street+Station" },
-                        { time: "21:15", title: "Check-in at Euston", desc: "Arrive in London, check into your hotel near Euston or King's Cross, and rest.", mapLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" }
+                        { time: "09:00", commute: "Walk 🚶", title: "Liverpool Waterfront", desc: "Walk the waterfront. Photograph the Royal Albert Dock and the iconic Liver Building.", mapLink: "https://www.google.com/maps/search/?api=1&query=Royal+Albert+Dock+Liverpool" },
+                        { time: "12:00", commute: "Bus/Taxi 🚌", title: "Head to Anfield Early", desc: "Head up toward Anfield early. Soak up the electric pre-match atmosphere at the local pubs.", mapLink: "https://www.google.com/maps/search/?api=1&query=Anfield+Stadium+Liverpool" },
+                        { time: "15:00", title: "Match: Liverpool vs Chelsea!", desc: "The main event!", mapLink: "https://www.google.com/maps/search/?api=1&query=Anfield+Stadium+Liverpool" },
+                        { time: "17:30", commute: "Bus/Taxi 🚌", title: "Exit Anfield & Grab Bags", desc: "Exit Anfield, bypass the heaviest crowds, and head back to the Aparthotel Adagio to collect your bags.", mapLink: "https://www.google.com/maps/search/?api=1&query=Aparthotel+Adagio+Liverpool+City+Centre" },
+                        { time: "18:45", commute: "Walk 🚶", title: "Liverpool Lime Street", desc: "Walk to Liverpool Lime Street Station.", mapLink: "https://www.google.com/maps/search/?api=1&query=Liverpool+Lime+Street+Station" },
+                        { time: "19:30", commute: "Train 🚆", transitNo: "<a href='https://mail.google.com/mail/u/0/#search/Avanti' target='_blank'>EMAIL 📧</a>", title: "Train to London Euston", desc: "Take the final Avanti train back down south to London Euston." },
+                        { time: "22:00", commute: "Walk 🚶", title: "Check-in at Euston", desc: "Walk to your Euston-area hotel and check in for the next two nights.", mapLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" }
                     ]
                 },
                 {
-                    tabName: "May 10", dateText: "May 10: Markets & Skyline", country: "UK", icon: "🇬🇧",
-                    dateCode: "2026-05-10", coords: { lat: 51.5072, lon: -0.1276 },
-                    acc: { outName: "London Euston Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London", inName: "London Euston Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" },
+                    tabName: "May 10", dateText: "May 10: Oxford Academic Escape", country: "UK", icon: "🇬🇧",
+                    dateCode: "2026-05-10", coords: { lat: 51.7520, lon: -1.2577 },
+                    acc: { outName: "London Euston Hotel", outLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London", inName: "London Euston Hotel", inLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" },
                     events: [
-                        { time: "09:00", commute: "Tube 🚇", title: "Notting Hill & Portobello", desc: "Photograph the colorful pastel houses and the famous Portobello Road Market.", mapLink: "https://www.google.com/maps/search/Portobello+Road+Market+London" },
-                        { time: "12:00", commute: "Tube 🚇", title: "Camden Town Lunch", desc: "Grab incredible global street food by the Regent's Canal locks.", isFood: true, mapLink: "https://www.google.com/maps/search/Camden+Lock+Market+London" },
-                        { time: "15:00", commute: "Boat ⛴️", transitNo: "Uber Boat", title: "River to Greenwich", desc: "Take the scenic river route down to Greenwich. Epic views of the city from the water.", mapLink: "https://www.google.com/maps/search/Greenwich+Pier+London" },
-                        { time: "17:00", commute: "Hike 🥾", title: "Royal Observatory Sunset", desc: "Walk up the hill in Greenwich Park for an epic sunset view of the modern London skyline.", mapLink: "https://www.google.com/maps/search/Royal+Observatory+Greenwich" },
-                        { time: "19:00", commute: "Tube/DLR 🚇", title: "Dinner & Return", desc: "Grab dinner in Greenwich or central London before heading back to the hotel.", isFood: true }
+                        { time: "07:30", commute: "Tube 🚇", title: "Tube to Paddington", desc: "Take the Tube from Euston to Paddington Station.", mapLink: "https://www.google.com/maps/search/?api=1&query=Paddington+Station+London" },
+                        { time: "08:20", commute: "Train 🚆", transitNo: "<a href='https://mail.google.com/mail/u/0/#search/GWR' target='_blank'>EMAIL 📧</a>", title: "Train to Oxford", desc: "Board the direct GWR train to Oxford." },
+                        { time: "09:30", commute: "Walk 🚶", title: "Radcliffe Camera & Bridge of Sighs", desc: "Head straight here for pristine architectural shots before the crowds hit.", mapLink: "https://www.google.com/maps/search/?api=1&query=Radcliffe+Camera+Oxford" },
+                        { time: "10:45", commute: "Walk 🚶", title: "St Mary the Virgin Tower", desc: "Climb the tower at the University Church for the ultimate panoramic shot of the Oxford skyline.", mapLink: "https://www.google.com/maps/search/?api=1&query=University+Church+of+St+Mary+the+Virgin+Oxford" },
+                        { time: "12:00", commute: "Walk 🚶", title: "Covered Market Lunch", desc: "Head into the Covered Market for lunch and fresh Ben's Cookies.", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Covered+Market+Oxford" },
+                        { time: "13:30", commute: "Walk 🚶", title: "Christ Church & The Meadow", desc: "Explore Christ Church. Walk the Meadow, photograph the courtyards, and visit The Hall.", mapLink: "https://www.google.com/maps/search/?api=1&query=Christ+Church+Oxford" },
+                        { time: "16:30", commute: "Train 🚆", transitNo: "<a href='https://mail.google.com/mail/u/0/#search/GWR' target='_blank'>EMAIL 📧</a>", title: "Train to London Paddington", desc: "Walk back to Oxford Station and take the GWR train back to London." },
+                        { time: "18:00", commute: "Tube/Walk 🚇", title: "Celebratory Final UK Dinner", desc: "Enjoy a final UK dinner in central London before heading back to your Euston hotel.", isFood: true }
                     ]
                 },
                 {
-                    tabName: "May 11", dateText: "May 11: Prague Arrival", country: "UK → CZ", icon: "🇬🇧 / 🇨🇿",
+                    tabName: "May 11", dateText: "May 11: Luton to Prague", country: "UK → CZ", icon: "🇬🇧 / 🇨🇿",
                     dateCode: "2026-05-11", coords: { lat: 50.0755, lon: 14.4378 },
-                    acc: { outName: "London Euston Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London", inName: "4 Lázenská, Prague", inLink: "https://www.google.com/maps/search/?api=1&query=4+Lázenská,+Prague,+Hlavní+mesto+Praha,+118+00" },
+                    acc: { outName: "London Euston Hotel", outLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London", inName: "4 Lázenská, Prague", inLink: "https://www.google.com/maps/search/?api=1&query=4+Lázenská,+Prague,+Hlavní+mesto+Praha,+118+00" },
                     events: [
-                        { time: "Morn", commute: "Train/Tube 🚇", title: "Transit to London Airport", desc: "Morning transit from Euston to the airport.", mapLink: "https://www.google.com/maps/search/London+Airport" },
-                        { time: "12:00", commute: "Flight ✈️", transitNo: "<a href='https://www.google.com/search?q=Ryanair+flight+London+to+Prague' target='_blank'>RYANAIR ↗</a>", title: "Flight to Prague", desc: "Ryanair Flight to PRG.", mapLink: "https://www.google.com/search?q=Ryanair+flight+London+to+Prague" },
-                        { time: "15:00", commute: "Bus/Uber 🚌", transitNo: "Airport Exp", title: "Arrival & Transit", desc: "Land at PRG. Take the Airport Express bus or direct Uber to Malá Strana.", mapLink: "https://www.google.com/maps/search/?api=1&query=Vaclav+Havel+Airport+Prague" },
-                        { time: "16:30", commute: "Walk 🚶", title: "Check-in & Drop Bags", desc: "Settle into your hotel at 4 Lázenská.", mapLink: "https://www.google.com/maps/search/?api=1&query=4+Lázenská,+Prague,+Hlavní+mesto+Praha,+118+00" },
-                        { time: "17:30", commute: "Walk 🚶", title: "Old Town Square", desc: "Cross the river. Capture the Astronomical Clock and Týn Church.", mapLink: "https://www.google.com/maps/search/?api=1&query=Old+Town+Square+Prague" },
-                        { time: "19:00", commute: "Hike 🥾", title: "Letná Park Sunset", desc: "Hike up for the absolute best wide-angle view of all of Prague's bridges.", mapLink: "https://maps.app.goo.gl/example46" }
+                        { time: "08:30", commute: "Walk 🚶", title: "Breakfast & Check-out", desc: "Sleep in slightly, grab breakfast, and check out of your Euston hotel.", isFood: true },
+                        { time: "10:15", commute: "Train/Shuttle 🚆", transitNo: "Thameslink/DART", title: "Transit to Luton Airport", desc: "Walk to St Pancras. Take the fast Thameslink train to Luton Airport Parkway, then jump on the DART shuttle straight into the LTN terminal.", mapLink: "https://www.google.com/maps/search/?api=1&query=Heathrow+Airport+London0" },
+                        { time: "11:30", commute: "Walk 🚶", title: "Airport Check-in", desc: "Drop your bags at the easyJet counter, clear security, and relax." },
+                        { time: "13:30", commute: "Flight ✈️", transitNo: "<a href='https://mail.google.com/mail/u/0/#search/easyJet' target='_blank'>EMAIL 📧</a>", title: "Fly to Prague (U2 2373)", desc: "Fly U2 2373 from London Luton (LTN) to Prague (PRG). Note the 1-hour forward time change!", mapLink: "https://www.google.com/search?q=Flight+U22373" },
+                        { time: "16:45", commute: "Bus/Uber 🚌", transitNo: "Airport Exp", title: "Arrival & Transit to City", desc: "Clear customs and take the Airport Express (AE) bus or an Uber straight into the city.", mapLink: "https://www.google.com/maps/search/?api=1&query=Vaclav+Havel+Airport+Prague" },
+                        { time: "18:00", commute: "Walk 🚶", title: "Check-in & Drop Bags", desc: "Check into your Malá Strana hotel (4 Lázenská) and drop your bags.", mapLink: "https://www.google.com/maps/search/?api=1&query=4+Lázenská,+Prague,+Hlavní+mesto+Praha,+118+00" },
+                        { time: "19:00", commute: "Hike 🥾", title: "Letná Park Sunset", desc: "Hike straight up to Letná Park. Frame up your tripod and capture a breathtaking sunset shot of the Vltava River and bridges to kick off Central Europe!", mapLink: "https://maps.app.goo.gl/example46" }
                     ]
                 },
                 {
