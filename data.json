@@ -1,0 +1,49 @@
+{
+  "trips": [
+    {
+      "trip_id": "europe_may_2026",
+      "destination": "UK & Central Europe",
+      "status": "upcoming",
+      "itinerary": [
+        {
+          "date": "2026-05-07",
+          "location": "London",
+          "accommodation": "London Hotel",
+          "activities": [
+            "Arrive in London",
+            "Check-in and rest"
+          ]
+        },
+        {
+          "date": "2026-05-10",
+          "location": "Oxford / London",
+          "accommodation": "London Hotel",
+          "activities": [
+            "Morning train to Oxford",
+            "Explore Oxford University",
+            "Evening return to London for overnight stay"
+          ]
+        },
+        {
+          "date": "2026-05-13",
+          "location": "Český Krumlov",
+          "accommodation": "Český Krumlov Hotel",
+          "activities": [
+            "15:00 Arrive in Český Krumlov",
+            "Check-in and explore the old town"
+          ]
+        },
+        {
+          "date": "2026-05-14",
+          "location": "Vienna",
+          "accommodation": "Vienna Hotel",
+          "activities": [
+            "Morning in Český Krumlov",
+            "12:00 Depart for Vienna",
+            "Arrive in Vienna (Added an extra day here)"
+          ]
+        }
+      ]
+    }
+  ]
+}
