@@ -1,0 +1,33 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 16px;
+  background-color: #f4f4f9;
+}
+
+#itinerary-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.day-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.day-card h3 {
+  margin-top: 0;
+  color: #333333;
+  border-bottom: 2px solid #eeeeee;
+  padding-bottom: 10px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
