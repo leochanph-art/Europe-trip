@@ -248,26 +248,177 @@
                         { time: "09:00", commute: "Car 🚗", title: "Drive to Munich", desc: "Drive 1.5 hours north into the capital of Bavaria.", mapLink: "https://www.google.com/maps/search/?api=1&query=Munich" },
                         { time: "11:00", commute: "Walk 🚶", title: "Marienplatz & Frauenkirche", desc: "Explore the historic city center, see the Glockenspiel, and visit the iconic Frauenkirche.", mapLink: "https://www.google.com/maps/search/?api=1&query=Marienplatz" },
                         { time: "13:30", commute: "Bike 🚲", title: "English Garden", desc: "Perfect for hiking or renting a bike. Watch the river surfers and explore the massive park.", mapLink: "https://www.google.com/maps/search/?api=1&query=Englischer+Garten+Munich" },
-                        { time: "17:00", title: "Shopping & Beerhouse", desc: "Finish the day with a massive pretzel and beer at a traditional beerhouse like Hofbräuhaus!", isFood: true, mapLink: "https://www.google.com/maps/search/?api=1&query=Hofbrauhaus+Munich" }
+                {
+                    tabName: "May 12", dateText: "May 12: Prague Heights", country: "CZ", icon: "🇨🇿",
+                    dateCode: "2026-05-12", coords: { lat: 50.0755, lon: 14.4378 },
+                    acc: { outName: "4 Lázenská, Prague", outLink: "https://www.google.com/maps/search/?api=1&query=4+Lázenská,+Prague,+Hlavní+mesto+Praha,+118+00", inName: "4 Lázenská, Prague", inLink: "https://www.google.com/maps/search/?api=1&query=4+Lázenská,+Prague,+Hlavní+mesto+Praha,+118+00" },
+                    events: [
+                        { time: "05:30", commute: "Walk 🚶", title: "Charles Bridge Sunrise", desc: "Set up the tripod to capture pristine, crowd-free portraits to celebrate your upcoming three-year wedding anniversary against the gothic statues.", mapLink: "https://www.google.com/maps/search/?api=1&query=Charles+Bridge+Prague" },
+                        { time: "08:30", commute: "Hike 🥾", title: "Prague Castle & Cathedral", desc: "Photograph the courtyards and step inside St. Vitus Cathedral to shoot the massive stained-glass windows.", mapLink: "https://maps.app.goo.gl/example47" },
+                        { time: "12:00", title: "Malá Strana Lunch", desc: "Grab lunch and a dark Czech beer.", isFood: true, mapLink: "https://maps.app.goo.gl/example48" },
+                        { time: "14:00", commute: "Walk 🚶", title: "Strahov Library", desc: "Photograph the towering wooden bookshelves and baroque ceiling frescoes.", mapLink: "https://maps.app.goo.gl/example49" },
+                        { time: "16:30", commute: "Hike 🥾", title: "Petřín Hill & Tower", desc: "Hike through wooded trails. Climb the Petřín Lookout Tower for golden hour views of the entire city.", mapLink: "https://www.google.com/maps/search/?api=1&query=Petrin+Hill+Prague" }
                     ]
                 },
                 {
-                    tabName: "May 24", dateText: "May 24: Relaxing City Day", country: "DE", icon: "🇩🇪",
+                    tabName: "May 13", dateText: "May 13: Fortress & Transit South", country: "CZ", icon: "🇨🇿",
+                    dateCode: "2026-05-13", coords: { lat: 50.0755, lon: 14.4378 },
+                    acc: { outName: "4 Lázenská, Prague", outLink: "https://www.google.com/maps/search/?api=1&query=4+Lázenská,+Prague,+Hlavní+mesto+Praha,+118+00", inName: "Vnitřní Město Hotel (CK)", inLink: "https://maps.app.goo.gl/example52" },
+                    events: [
+                        { time: "08:30", commute: "Tram 🚋", title: "Vyšehrad Fortress", desc: "Photograph the quiet, cliffside views of the Vltava River.", mapLink: "https://maps.app.goo.gl/example51" },
+                        { time: "11:00", commute: "Tram 🚋", title: "Transit to Na Knížecí", desc: "Take a direct tram from your hotel area to the bus terminal.", mapLink: "https://maps.app.goo.gl/example53" },
+                        { time: "12:00", commute: "Bus 🚌", transitNo: "RegioJet", title: "Bus to Český Krumlov", desc: "Ride through the Bohemian countryside.", mapLink: "https://www.google.com/maps/search/?api=1&query=Cesky+Krumlov+Bus+Station" },
+                        { time: "15:00", commute: "Walk 🚶", title: "Arrive & Check-in", desc: "Walk into Vnitřní Město and check into your hotel.", mapLink: "https://maps.app.goo.gl/example52" },
+                        { time: "16:30", commute: "Walk 🚶", title: "Castle Cloak Bridge Sunset", desc: "The day-trippers vanish. Walk up to capture a spectacular sunset over the medieval red rooftops.", mapLink: "https://maps.app.goo.gl/example54" }
+                    ]
+                },
+                {
+                    tabName: "May 14", dateText: "May 14: CK Morning & Vienna Shift", country: "CZ → AT", icon: "🇨🇿 / 🇦🇹",
+                    dateCode: "2026-05-14", coords: { lat: 48.8127, lon: 14.3175 },
+                    acc: { outName: "CK Hotel", outLink: "https://maps.app.goo.gl/example52", inName: "Vienna Hauptbahnhof Hotel", inLink: "https://www.google.com/maps/search/?api=1&query=Vienna+Hauptbahnhof" },
+                    events: [
+                        { time: "06:30", commute: "Walk 🚶", title: "Morning Mist Loop", desc: "Walk the completely empty inner town loop while the morning mist rises off the river.", mapLink: "https://www.google.com/maps/search/?api=1&query=Cesky+Krumlov+Castle" },
+                        { time: "09:00", title: "Breakfast & Pack", desc: "Enjoy breakfast, pack up, and relax.", isFood: true },
+                        { time: "12:00", commute: "Shuttle 🚐", transitNo: "CK Shuttle", title: "Shuttle to Vienna", desc: "Pre-booked shuttle picks you up and drives straight across the border to Vienna Hbf.", mapLink: "https://www.google.com/maps/search/?api=1&query=Vienna+Hauptbahnhof" },
+                        { time: "16:00", commute: "U-Bahn 🚇", title: "Schönbrunn Gloriette", desc: "Take the U-Bahn to Schönbrunn. Hike directly up the garden hill to the Gloriette monument for sweeping golden hour views of the Vienna skyline.", mapLink: "https://www.google.com/maps/search/?api=1&query=Gloriette+Schonbrunn" }
+                    ]
+                },
+                {
+                    tabName: "May 15", dateText: "May 15: Libraries & Vienna Woods", country: "AT", icon: "🇦🇹",
+                    dateCode: "2026-05-15", coords: { lat: 48.2082, lon: 16.3738 },
+                    acc: { outName: "Vienna Hauptbahnhof", outLink: "https://www.google.com/maps/search/?api=1&query=Vienna+Hauptbahnhof", inName: "Vienna Hauptbahnhof Hotel", inLink: "https://www.google.com/maps/search/?api=1&query=Vienna+Hauptbahnhof" },
+                    events: [
+                        { time: "09:00", commute: "Walk 🚶", title: "Austrian National Library", desc: "Enter the State Hall. Use a wide-angle lens to capture the jaw-dropping marble floors and domed ceilings.", mapLink: "https://www.google.com/search?q=Austrian+National+Library+State+Hall" },
+                        { time: "11:30", title: "Wiener Schnitzel Lunch", desc: "Hunt down a classic, crispy Wiener Schnitzel in the city center.", isFood: true, mapLink: "https://www.google.com/search?q=Best+Wiener+Schnitzel+Vienna" },
+                        { time: "13:30", commute: "Bus/Hike 🥾", title: "Kahlenberg Hike", desc: "Take the bus to the edge of the city and hike the Vienna Woods up to Kahlenberg for panoramic nature shots over the Danube River.", mapLink: "https://www.google.com/search?q=Kahlenberg+Vienna" },
+                        { time: "18:00", commute: "Walk 🚶", title: "Hofburg Palace Dusk", desc: "Walk around the Hofburg Palace exterior at dusk as the city lights turn on.", mapLink: "https://www.google.com/maps/search/Hofburg+Vienna" }
+                    ]
+                },
+                {
+                    tabName: "May 16", dateText: "May 16: Road Trip Kickoff", country: "AT → DE → AT", icon: "🇦🇹 / 🇩🇪",
+                    dateCode: "2026-05-16", coords: { lat: 47.8095, lon: 13.0550 },
+                    acc: { outName: "Vienna Hauptbahnhof", outLink: "https://www.google.com/maps/search/?api=1&query=Vienna+Hauptbahnhof", inName: "Salzkammergut Basecamp", inLink: "https://www.google.com/search?q=Salzkammergut+Hotel" },
+                    events: [
+                        { time: "08:30", commute: "Train 🚆", transitNo: "<a href='https://mail.google.com/mail/u/0/#search/OBB' target='_blank'>EMAIL 📧</a>", title: "High-Speed to Salzburg", desc: "Take the ÖBB train from Vienna Hbf directly to Salzburg Hbf." },
+                        { time: "11:15", commute: "Train 🚆", transitNo: "Local Rail", title: "Cross-Border Transfer", desc: "Ride 15 minutes into Freilassing, Germany." },
+                        { time: "12:00", commute: "Car 🚗", transitNo: "Rental", title: "Pick Up German Rental", desc: "Pick up rental car in Freilassing to officially start the German rental and avoid massive drop-off fees later.", mapLink: "https://www.google.com/search?q=Freilassing+Car+Rental" },
+                        { time: "13:30", commute: "Car 🚗", title: "Explore Salzburg", desc: "Drive back into Salzburg. Explore the Mirabell Gardens and photograph the Hohensalzburg Fortress exterior.", mapLink: "https://www.google.com/search?q=Mirabell+Gardens+Salzburg" },
+                        { time: "18:30", commute: "Car 🚗", title: "Drive to Lakes District", desc: "Drive out of the city into the Salzkammergut lake district and check into your basecamp." }
+                    ]
+                },
+                {
+                    tabName: "May 17", dateText: "May 17: The Five Lakes Blitz", country: "AT", icon: "🇦🇹",
+                    dateCode: "2026-05-17", coords: { lat: 47.5622, lon: 13.6493 },
+                    acc: { outName: "Salzkammergut Basecamp", outLink: "", inName: "Obertraun / Hallstatt Hotel", inLink: "https://www.google.com/maps/search/?api=1&query=Obertraun+Hotel" },
+                    events: [
+                        { time: "07:00", commute: "Car 🚗", title: "Wolfgangsee Reflections", desc: "Drive to St. Gilgen. Photograph the morning reflections on Wolfgangsee.", mapLink: "https://www.google.com/search?q=Wolfgangsee" },
+                        { time: "09:30", commute: "Car 🚗", title: "Mondsee & Basilica", desc: "Capture the lake panoramas and the famous yellow Basilica exterior.", mapLink: "https://www.google.com/search?q=Mondsee+Basilica" },
+                        { time: "12:00", commute: "Car 🚗", title: "Attersee Shoreline Cruise", desc: "Cruise along the turquoise shoreline. Stop for a lakeside lunch.", isFood: true, mapLink: "https://www.google.com/search?q=Attersee" },
+                        { time: "15:30", commute: "Car 🚗", title: "Traunsee & Schloss Ort", desc: "Set up your tripod to photograph Schloss Ort (the castle on the water) as the sun gets low.", mapLink: "https://www.google.com/search?q=Schloss+Ort+Traunsee" },
+                        { time: "19:30", commute: "Car 🚗", title: "Drive South & Check-in", desc: "Drive south to Obertraun or Hallstatt, check in, and rest for an early morning." }
+                    ]
+                },
+                {
+                    tabName: "May 18", dateText: "May 18: Hallstatt & Glacier Lake", country: "AT → DE", icon: "🇦🇹 / 🇩🇪",
+                    dateCode: "2026-05-18", coords: { lat: 47.6317, lon: 13.0042 },
+                    acc: { outName: "Obertraun / Hallstatt Hotel", outLink: "https://www.google.com/maps/search/?api=1&query=Obertraun", inName: "Berchtesgaden Hotel", inLink: "https://www.google.com/search?q=Berchtesgaden+Hotel" },
+                    events: [
+                        { time: "06:00", commute: "Walk 🚶", title: "Hallstatt Viewpoint", desc: "Stand at the classic Hallstatt viewpoint before a single tour bus arrives.", mapLink: "https://www.google.com/search?q=Hallstatt+Classic+Village+Viewpoint" },
+                        { time: "08:30", commute: "Hike 🥾", title: "Hallstatt Skywalk", desc: "Hike aggressively up the mountain to the Skywalk for aerial shots of the lake.", mapLink: "https://www.google.com/search?q=Hallstatt+Skywalk" },
+                        { time: "11:30", commute: "Car / Hike 🥾", title: "Gosausee Lake Hike", desc: "Drive west. Hike the flat, stunning trail around the crystal-clear water with the Dachstein glacier towering in the background.", mapLink: "https://www.google.com/maps/search/?api=1&query=Gosausee" },
+                        { time: "14:30", commute: "Car 🚗", title: "Cross into Germany", desc: "Drive across the border into Berchtesgaden." },
+                        { time: "16:30", commute: "Walk 🚶", title: "Explore Berchtesgaden", desc: "Check into your hotel and explore the alpine town center.", mapLink: "https://www.google.com/search?q=Berchtesgaden+Town+Center" }
+                    ]
+                },
+                {
+                    tabName: "May 19", dateText: "May 19: The Deep Fjord", country: "DE", icon: "🇩🇪",
+                    dateCode: "2026-05-19", coords: { lat: 47.5833, lon: 12.9833 },
+                    acc: { outName: "Berchtesgaden Hotel", outLink: "", inName: "Berchtesgaden Hotel", inLink: "" },
+                    events: [
+                        { time: "07:45", commute: "Car 🚗", title: "Schönau am Königssee Pier", desc: "Arrive at the pier early to beat the crowds.", mapLink: "https://www.google.com/search?q=K%C3%B6nigssee+Pier" },
+                        { time: "08:00", commute: "Boat ⛴️", transitNo: "First Boat", title: "Electric Boat to Salet", desc: "Board the very first electric boat. Ride it all the way to the final stop, Salet.", mapLink: "https://www.google.com/search?q=Salet+K%C3%B6nigssee" },
+                        { time: "09:15", commute: "Hike 🥾", title: "Obersee Boathouse", desc: "Hike the flat path to the edge of Obersee to capture the legendary boathouse reflection.", mapLink: "https://www.google.com/search?q=Obersee+Boathouse" },
+                        { time: "10:30", commute: "Hike 🥾", title: "Fischunkelalm & Waterfall", desc: "Scramble along the rocky edge of Obersee, then push deep into the valley to the base of the mighty Röthbach Waterfall.", mapLink: "https://www.google.com/search?q=R%C3%B6thbach+Waterfall" },
+                        { time: "13:00", commute: "Boat ⛴️", title: "St. Bartholomä Church", desc: "Hike back to Salet. Take the boat to St. Bartholomä to photograph the red-domed church.", mapLink: "https://www.google.com/maps/search/?api=1&query=St.+Bartholoma+Konigssee" },
+                        { time: "16:00", commute: "Car 🚗", title: "Hintersee Twilight Walk", desc: "Return to the pier. Drive to Hintersee for a quick twilight walk if you still have energy.", mapLink: "https://www.google.com/search?q=Hintersee+Bavaria" }
+                    ]
+                },
+                {
+                    tabName: "May 20", dateText: "May 20: The Suspension Bridge", country: "DE → AT", icon: "🇩🇪 / 🇦🇹",
+                    dateCode: "2026-05-20", coords: { lat: 47.2692, lon: 11.4041 },
+                    acc: { outName: "Berchtesgaden Hotel", outLink: "", inName: "Innsbruck Hotel", inLink: "https://www.google.com/search?q=Innsbruck+Hotel" },
+                    events: [
+                        { time: "07:00", commute: "Car 🚗", title: "Schlegeis Alpine Road", desc: "Drive south into Austria's Zillertal valley. Navigate the winding toll road up to the reservoir.", mapLink: "https://www.google.com/search?q=Schlegeis+Alpine+Road" },
+                        { time: "10:30", commute: "Hike 🥾", title: "Attack Trail 502", desc: "This is a brutal, rocky 600-meter vertical climb. Use your trekking poles and pace yourself.", mapLink: "https://www.google.com/search?q=Olpererh%C3%BCtte+Trail" },
+                        { time: "12:30", commute: "Walk 🚶", title: "Olpererhütte & Bridge", desc: "Photograph the world-famous suspension bridge hovering over the blue reservoir. Eat a hot meal at the hut.", isFood: true, mapLink: "https://www.google.com/search?q=Olpererh%C3%BCtte+Suspension+Bridge" },
+                        { time: "14:00", commute: "Hike 🥾", title: "Steep Descent", desc: "Carefully navigate the steep descent back to your car." },
+                        { time: "16:00", commute: "Car 🚗", title: "Drive to Innsbruck", desc: "Drive west to Innsbruck and check into your hotel." },
+                        { time: "18:00", commute: "Walk 🚶", title: "Innsbruck Altstadt", desc: "Walk the medieval Altstadt. Photograph the Golden Roof with the jagged Nordkette mountains looming directly behind it.", mapLink: "https://www.google.com/search?q=Golden+Roof+Innsbruck" }
+                    ]
+                },
+                {
+                    tabName: "May 21", dateText: "May 21: High Alpine Lakes", country: "AT → DE", icon: "🇦🇹 / 🇩🇪",
+                    dateCode: "2026-05-21", coords: { lat: 47.5696, lon: 10.7004 },
+                    acc: { outName: "Innsbruck Hotel", outLink: "", inName: "Füssen Hotel", inLink: "https://www.google.com/search?q=F%C3%BCssen+Hotel" },
+                    events: [
+                        { time: "08:00", commute: "Car 🚗", title: "Ehrwalder Almbahn", desc: "Drive from Innsbruck to the cable car station.", mapLink: "https://www.google.com/search?q=Ehrwalder+Almbahn" },
+                        { time: "09:30", commute: "Cable Car 🚠", title: "Ride Up the Mountain", desc: "Ride the cable car up to save your legs from the initial elevation gain." },
+                        { time: "10:00", commute: "Hike 🥾", title: "Hike to Seebensee", desc: "Hike the relatively flat, wide trail through the valley to the pristine Seebensee.", mapLink: "https://www.google.com/search?q=Seebensee" },
+                        { time: "11:30", commute: "Hike 🥾", title: "The Zigzag Hell", desc: "Tackle the steep scree slope up to Coburger Hütte. It is brutal but worth it.", mapLink: "https://www.google.com/search?q=Coburger+H%C3%BCtte" },
+                        { time: "12:30", commute: "Walk 🚶", title: "Between Two Lakes", desc: "You are now standing between two lakes. Photograph Seebensee below you and the dark, icy Drachensee above you.", mapLink: "https://www.google.com/search?q=Drachensee" },
+                        { time: "14:00", commute: "Hike 🥾", title: "Careful Descent", desc: "Descend carefully and hike back to the cable car." },
+                        { time: "16:30", commute: "Car 🚗", title: "Plansee Highway", desc: "Drive along the stunning, fjord-like Plansee highway, crossing back into Germany.", mapLink: "https://www.google.com/search?q=Plansee" },
+                        { time: "18:00", commute: "Walk 🚶", title: "Arrive in Füssen", desc: "Arrive in Füssen (near Neuschwanstein), check in, and rest your legs." }
+                    ]
+                },
+                {
+                    tabName: "May 22", dateText: "May 22: The King's Castle", country: "DE", icon: "🇩🇪",
+                    dateCode: "2026-05-22", coords: { lat: 47.4917, lon: 11.0955 },
+                    acc: { outName: "Füssen Hotel", outLink: "", inName: "Garmisch-Partenkirchen Hotel", inLink: "https://www.google.com/search?q=Garmisch-Partenkirchen+Hotel" },
+                    events: [
+                        { time: "08:00", commute: "Car 🚗", title: "Hohenschwangau Parking", desc: "Drive to the parking lots early to beat the chaotic traffic.", mapLink: "https://www.google.com/search?q=Hohenschwangau+Parking" },
+                        { time: "08:45", commute: "Bus 🚌", title: "Shuttle Up the Mountain", desc: "Take the shuttle bus up to the castle grounds." },
+                        { time: "09:30", commute: "Walk 🚶", title: "Marienbrücke", desc: "Cross the crowded Marienbrücke (Mary's Bridge) quickly.", mapLink: "https://www.google.com/maps/search/?api=1&query=Marienbrucke" },
+                        { time: "10:00", commute: "Hike 🥾", title: "Private Castle Viewpoints", desc: "Hike the rugged dirt trail uphill past the bridge. Find the exposed cliff edges for entirely private, wide-angle shots looking down on Neuschwanstein Castle.", mapLink: "https://www.google.com/search?q=Neuschwanstein+Castle+Viewpoint" },
+                        { time: "12:00", title: "Lunch in Town", desc: "Descend the mountain and grab lunch in town.", isFood: true },
+                        { time: "14:30", commute: "Car 🚗", title: "Drive to GP", desc: "Drive to Garmisch-Partenkirchen.", mapLink: "https://www.google.com/search?q=Garmisch-Partenkirchen" },
+                        { time: "16:30", commute: "Hike 🥾", title: "Partnach Gorge", desc: "Hike through the Partnachklamm, walking through narrow rock tunnels right beside the roaring glacial rapids.", mapLink: "https://www.google.com/search?q=Partnach+Gorge" }
+                    ]
+                },
+                {
+                    tabName: "May 23", dateText: "May 23: Top of Germany", country: "DE", icon: "🇩🇪",
+                    dateCode: "2026-05-23", coords: { lat: 48.1351, lon: 11.5820 },
+                    acc: { outName: "Garmisch-Partenkirchen Hotel", outLink: "", inName: "Munich Hauptbahnhof Hotel", inLink: "https://www.google.com/search?q=Munich+Hauptbahnhof+Hotel" },
+                    events: [
+                        { time: "08:00", commute: "Car 🚗", title: "Eibsee Cable Car Base", desc: "Drive to the Eibsee cable car base station.", mapLink: "https://www.google.com/search?q=Eibsee+Cable+Car" },
+                        { time: "08:45", commute: "Cable Car 🚠", title: "Ascend Zugspitze", desc: "Ride the ultra-steep cable car directly to the Zugspitze summit." },
+                        { time: "09:00", commute: "Walk 🚶", title: "Zugspitze Summit", desc: "Walk the viewing platforms. Use your telephoto lens to photograph the 360-degree panorama of 400 mountain peaks spanning four countries.", mapLink: "https://www.google.com/search?q=Zugspitze+Summit" },
+                        { time: "12:00", commute: "Train 🚆", transitNo: "Zahnradbahn", title: "Cogwheel Train Descent", desc: "Ride the historic cogwheel train back down the mountain." },
+                        { time: "13:00", commute: "Hike 🥾", title: "Lake Eibsee Loop", desc: "Hike the 7km loop trail. Capture perfect reflections of the Zugspitze massive in the crystal-clear water.", mapLink: "https://www.google.com/search?q=Lake+Eibsee" },
+                        { time: "16:00", commute: "Car 🚗", title: "Autobahn to Munich", desc: "Drive the Autobahn back to Munich." },
+                        { time: "18:00", commute: "Walk 🚶", title: "Check into Munich", desc: "Check into your hotel near the Munich Hauptbahnhof.", mapLink: "https://www.google.com/search?q=Munich+Hauptbahnhof" }
+                    ]
+                },
+                {
+                    tabName: "May 24", dateText: "May 24: Buffer & Beer Gardens", country: "DE", icon: "🇩🇪",
                     dateCode: "2026-05-24", coords: { lat: 48.1351, lon: 11.5820 },
-                    acc: { outName: "Munich Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=Munich", inName: "Munich Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=Munich" },
+                    acc: { outName: "Munich Hauptbahnhof Hotel", outLink: "", inName: "Munich Hauptbahnhof Hotel", inLink: "" },
                     events: [
-                        { time: "10:00", commute: "Walk 🚶", title: "Isar River Walks", desc: "Start the day slow with a scenic walk along the Isar River.", mapLink: "https://www.google.com/search?q=Isar+River+Munich" },
-                        { time: "13:00", title: "Outdoor Beer Garden", desc: "Enjoy lunch in a classic outdoor beer garden.", isFood: true, mapLink: "https://www.google.com/search?q=Munich+Beer+Gardens" },
-                        { time: "15:00", commute: "Walk 🚶", title: "Final City Relaxation", desc: "A free afternoon to wander, shop for souvenirs, and soak up the last bits of Europe." }
+                        { time: "09:00", commute: "Car 🚗", title: "Return Rental Car", desc: "Return your rental car at a city center location to complete your flawless zero-fee cross-border rental strategy.", mapLink: "https://www.google.com/search?q=Munich+Car+Rental+Return" },
+                        { time: "10:30", commute: "Walk/Surf 🏄", title: "English Garden & Surfers", desc: "Walk through the massive park. Watch the river surfers dominating the Eisbachwelle standing wave.", mapLink: "https://www.google.com/search?q=Eisbachwelle+Surfers" },
+                        { time: "13:30", title: "Chinese Tower Beer Garden", desc: "Grab a massive pretzel and a liter of Bavarian beer at the outdoor beer garden.", isFood: true, mapLink: "https://www.google.com/search?q=Chinesischer+Turm+Beer+Garden" },
+                        { time: "16:00", commute: "Walk 🚶", title: "Isar River Sunset", desc: "Walk the scenic paths along the Isar River for your final European sunset.", mapLink: "https://www.google.com/search?q=Isar+River+Munich" },
+                        { time: "19:00", title: "Roasted Pork Knuckle Feast", desc: "Enjoy a farewell feast to cap off an incredible 20 days.", isFood: true }
                     ]
                 },
                 {
-                    tabName: "May 25", dateText: "May 25: Heading Home", country: "DE → HKG", icon: "🇩🇪 / 🇭🇰",
+                    tabName: "May 25", dateText: "May 25: The Departure", country: "DE → HKG", icon: "🇩🇪 / 🇭🇰",
                     dateCode: "2026-05-25", coords: { lat: 48.3538, lon: 11.7861 },
-                    acc: { outName: "Munich Hotel (TBC)", outLink: "https://www.google.com/maps/search/?api=1&query=Munich", inName: "Home (Hong Kong)", inLink: "" },
+                    acc: { outName: "Munich Hauptbahnhof Hotel", outLink: "", inName: "Home (Hong Kong)", inLink: "" },
                     events: [
-                        { time: "Day", commute: "Train/Taxi 🚕", title: "Head to MUC Airport", desc: "Check out of the hotel and transit to Munich Airport.", mapLink: "https://www.google.com/search?q=Munich+Airport" },
-                        { time: "TBC", commute: "Flight ✈️", transitNo: "<a href='https://www.google.com/search?q=Flight+CX300' target='_blank'>CX300 ↗</a>", title: "Flight CX300", desc: "Board the flight back to Hong Kong. What an incredible 20 days!", mapLink: "https://www.google.com/search?q=Flight+CX300" }
+                        { time: "08:00", commute: "Walk 🚶", title: "Breakfast & Pack", desc: "Wake up, pack your gear, and grab a fresh German pastry for breakfast.", isFood: true },
+                        { time: "09:30", commute: "S-Bahn 🚆", transitNo: "S1/S8", title: "Train to MUC Airport", desc: "Walk to the Hauptbahnhof and take the direct S-Bahn straight to Munich Airport.", mapLink: "https://www.google.com/search?q=Munich+Airport" },
+                        { time: "10:30", commute: "Flight ✈️", transitNo: "<a href='https://mail.google.com/mail/u/0/#search/Cathay+Pacific' target='_blank'>EMAIL 📧</a>", title: "Check-in Flight CX300", desc: "Check in for your CX300 flight, drop your heavy bags, and clear security. Have a safe flight back home!", mapLink: "https://www.google.com/search?q=Flight+CX300" }
                     ]
                 }
             ]
