@@ -23,4 +23,38 @@ async function loadItineraryData() {
 }
 
 // Execute the function when the script loads
-loadItineraryData();
+loadItineraryData(renderTrips(data.trips););
+function renderTrips(trips) {
+  // 1. Find the container in the HTML
+  const container = document.getElementById('itinerary-container');
+  
+  // 2. Clear the "Loading itinerary..." text
+  container.innerHTML = ''; 
+
+  // 3. Loop through each trip
+  trips.forEach(trip => {
+    // Create a title for the destination
+    const tripHeader = document.createElement('h2');
+    tripHeader.textContent = trip.destination;
+    container.appendChild(tripHeader);
+
+    // 4. Loop through the daily schedule of that trip
+    trip.itinerary.forEach(day => {
+      // Create a card for the day
+      const dayCard = document.createElement('div');
+      dayCard.className = 'day-card';
+
+      // Build the internal HTML for the card
+      dayCard.innerHTML = `
+        <h3>${day.date} - ${day.location}</h3>
+        <p><strong>Accommodation:</strong> ${day.accommodation}</p>
+        <ul>
+          ${day.activities.map(activity => `<li>${activity}</li>`).join('')}
+        </ul>
+      `;
+
+      // 5. Append the finished card to the main container
+      container.appendChild(dayCard);
+    });
+  });
+}
