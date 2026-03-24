@@ -293,34 +293,35 @@
         };
     </script>
 
-    <header class="bg-white pt-8 pb-3 shrink-0 z-50 sticky top-0 shadow-sm border-b border-slate-100">
-        <div class="px-5">
-            <div class="flex justify-between items-center mb-5">
-                <div>
-                    <p class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-1" id="display-dates"></p>
-                    <h1 class="text-3xl font-black text-slate-900 tracking-tight leading-none" id="display-title"></h1>
-                </div>
-                <div class="flex items-center justify-center relative w-11 h-11 shrink-0">
-                    <svg class="w-11 h-11 transform -rotate-90">
-                        <circle cx="22" cy="22" r="18" stroke="currentColor" stroke-width="4" fill="transparent" class="text-slate-100" />
-                        <circle cx="22" cy="22" r="18" stroke="currentColor" stroke-width="4" fill="transparent" class="text-slate-900 transition-all duration-1000 ease-out" id="progress-circle" stroke-dasharray="113" stroke-dashoffset="113" />
-                    </svg>
-                    <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[9px] font-black text-slate-900" id="progress-text"></span>
-                </div>
-            </div>
 
-            <div class="grid grid-cols-2 gap-3 mb-4">
-                <a href="notes.html" class="bg-blue-50 text-blue-700 border border-blue-100 py-2.5 rounded-xl font-bold text-xs flex justify-center items-center gap-2 shadow-sm transition hover:bg-blue-100">
-                    <span class="text-base">📝</span> Notes & Tickets
-                </a>
-                <a href="budget.html" class="bg-emerald-50 text-emerald-700 border border-emerald-100 py-2.5 rounded-xl font-bold text-xs flex justify-center items-center gap-2 shadow-sm transition hover:bg-emerald-100">
-                    <span class="text-base">💰</span> Trip Budget
-                </a>
+    <header class="bg-white pt-10 pb-4 px-5 shrink-0">
+        <div class="flex justify-between items-center mb-5">
+            <div>
+                <p class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-1" id="display-dates"></p>
+                <h1 class="text-3xl font-black text-slate-900 tracking-tight leading-none" id="display-title"></h1>
+            </div>
+            <div class="flex items-center justify-center relative w-11 h-11 shrink-0">
+                <svg class="w-11 h-11 transform -rotate-90">
+                    <circle cx="22" cy="22" r="18" stroke="currentColor" stroke-width="4" fill="transparent" class="text-slate-100" />
+                    <circle cx="22" cy="22" r="18" stroke="currentColor" stroke-width="4" fill="transparent" class="text-slate-900 transition-all duration-1000 ease-out" id="progress-circle" stroke-dasharray="113" stroke-dashoffset="113" />
+                </svg>
+                <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[9px] font-black text-slate-900" id="progress-text"></span>
             </div>
         </div>
 
-        <nav class="flex overflow-x-auto px-5 space-x-2 no-scrollbar pt-1" id="tabs-container"></nav>
+        <div class="grid grid-cols-2 gap-3">
+            <a href="notes.html" class="bg-blue-50 text-blue-700 border border-blue-100 py-2.5 rounded-xl font-bold text-xs flex justify-center items-center gap-2 shadow-sm transition hover:bg-blue-100">
+                <span class="text-base">📝</span> Notes & Tickets
+            </a>
+            <a href="budget.html" class="bg-emerald-50 text-emerald-700 border border-emerald-100 py-2.5 rounded-xl font-bold text-xs flex justify-center items-center gap-2 shadow-sm transition hover:bg-emerald-100">
+                <span class="text-base">💰</span> Trip Budget
+            </a>
+        </div>
     </header>
+
+    <div class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200 py-3 shrink-0">
+        <nav class="flex overflow-x-auto px-5 space-x-2 no-scrollbar" id="tabs-container"></nav>
+    </div>
 
     <main class="flex-grow px-4 py-6 bg-slate-50 pb-32 overflow-hidden w-full max-w-md mx-auto" id="itinerary-content"></main>
 
