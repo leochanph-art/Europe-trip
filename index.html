@@ -10,9 +10,9 @@
         body { font-family: 'Inter', sans-serif; -webkit-tap-highlight-color: transparent; overflow-x: hidden; }
         
         /* 🎬 NEW: Swipe & Transition Animations */
-        .fade-slide-up { animation: fadeSlideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        .swipe-next { animation: swipeNext 0.5s ease-out forwards; }
-        .swipe-prev { animation: swipePrev 0.5s ease-out forwards; }
+        .fade-slide-up { animation: fadeSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .swipe-next { animation: swipeNext 0.25s ease-out forwards; }
+        .swipe-prev { animation: swipePrev 0.25s ease-out forwards; }
         
         @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes swipeNext { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
@@ -356,8 +356,8 @@
             const diffX = touchendX - touchstartX;
             const diffY = touchendY - touchstartY;
             
-            // Trigger if horizontal swipe is > 100px and larger than vertical swipe
-            if (Math.abs(diffX) > 100 && Math.abs(diffX) > Math.abs(diffY)) {
+            // Trigger if horizontal swipe is > 80px and larger than vertical swipe
+            if (Math.abs(diffX) > 80 && Math.abs(diffX) > Math.abs(diffY)) {
                 if (diffX < 0 && currentDayIndex < tripData.days.length - 1) {
                     showDay(currentDayIndex + 1, 'swipe-next'); // Swipe Left -> Next
                 } else if (diffX > 0 && currentDayIndex > 0) {
