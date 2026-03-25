@@ -76,7 +76,7 @@
                 {
                     tabName: "May 9", dateText: "May 9: The Anfield Atmosphere", country: "UK", icon: "🇬🇧",
                     dateCode: "2026-05-09", coords: { lat: 53.4084, lon: -2.9916 },
-                    acc: { outName: "Aparthotel Adagio (Liverpool)", outLink: "https://www.google.com/maps/search/?api=1&query=Aparthotel+Adagio+Liverpool+City+Centre", inName: "London Euston Hotel (TBC)", inLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" },
+                    acc: { outName: "Aparthotel Adagio (Liverpool)", outLink: "https://www.google.com/maps/search/?api=1&query=Aparthotel+Adagio+Liverpool+City+Centre", inName: "London Euston Hotel (TBC)", inLink: "http://agoda.onelink.me/1640755593?pid=redirect&c=CONFIRMATION_EMAIL_ONELINK&af_dp=agoda%3A%2F%2Fmmb%3FbookingToken%3DUR%252Fs5Q%252ByNcsWm4Ql3g%252B5xQ%253D%253D&deep_link_value=agoda%3A%2F%2Fmmb%3FbookingToken%3DUR%252Fs5Q%252ByNcsWm4Ql3g%252B5xQ%253D%253D&af_sub3=5dde8def-e9ea-4cb3-b4a4-225bd3d8b3a5&af_sub4=Hotel&af_force_deeplink=true&af_web_dp=https%3A%2F%2Fwww.agoda.com%2Faccount%2Feditbooking.html%3FbookingId%3DUR%2Fs5Q%2ByNcsWm4Ql3g%2B5xQ%3D%3D&af_r=https%3A%2F%2Fwww.agoda.com%2Faccount%2Feditbooking.html%3FbookingId%3DUR%2Fs5Q%2ByNcsWm4Ql3g%2B5xQ%3D%3D" },
                     events: [
                         { time: "09:00", commute: "Walk 🚶", title: "Liverpool Waterfront", desc: "Walk the waterfront. Photograph the Royal Albert Dock and the iconic Liver Building.", mapLink: "https://www.google.com/maps/search/?api=1&query=Royal+Albert+Dock+Liverpool" },
                         { time: "12:00", commute: "Bus/Taxi 🚌", title: "Head to Anfield Early", desc: "Head up toward Anfield early. Soak up the electric pre-match atmosphere at the local pubs.", mapLink: "https://www.google.com/maps/search/?api=1&query=Anfield+Stadium+Liverpool" },
@@ -90,7 +90,7 @@
                 {
                     tabName: "May 10", dateText: "May 10: Oxford Academic Escape", country: "UK", icon: "🇬🇧",
                     dateCode: "2026-05-10", coords: { lat: 51.7520, lon: -1.2577 },
-                    acc: { outName: "London Euston Hotel", outLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London", inName: "London Euston Hotel", inLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" },
+                    acc: { outName: "London Euston Hotel", outLink: "http://agoda.onelink.me/1640755593?pid=redirect&c=CONFIRMATION_EMAIL_ONELINK&af_dp=agoda%3A%2F%2Fmmb%3FbookingToken%3DUR%252Fs5Q%252ByNcsWm4Ql3g%252B5xQ%253D%253D&deep_link_value=agoda%3A%2F%2Fmmb%3FbookingToken%3DUR%252Fs5Q%252ByNcsWm4Ql3g%252B5xQ%253D%253D&af_sub3=5dde8def-e9ea-4cb3-b4a4-225bd3d8b3a5&af_sub4=Hotel&af_force_deeplink=true&af_web_dp=https%3A%2F%2Fwww.agoda.com%2Faccount%2Feditbooking.html%3FbookingId%3DUR%2Fs5Q%2ByNcsWm4Ql3g%2B5xQ%3D%3D&af_r=https%3A%2F%2Fwww.agoda.com%2Faccount%2Feditbooking.html%3FbookingId%3DUR%2Fs5Q%2ByNcsWm4Ql3g%2B5xQ%3D%3D", inName: "London Euston Hotel", inLink: "https://www.google.com/maps/search/?api=1&query=Euston+Station+London" },
                     events: [
                         { time: "07:30", commute: "Tube 🚇", title: "Tube to Paddington", desc: "Take the Tube from Euston to Paddington Station.", mapLink: "https://www.google.com/maps/search/?api=1&query=Paddington+Station+London" },
                         { time: "08:20", commute: "Train 🚆", transitNo: "<a href='https://mail.google.com/mail/u/0/#search/GWR' target='_blank'>EMAIL 📧</a>", title: "Train to Oxford", desc: "Board the direct GWR train to Oxford." },
@@ -356,8 +356,8 @@
             const diffX = touchendX - touchstartX;
             const diffY = touchendY - touchstartY;
             
-            // Trigger if horizontal swipe is > 80px and larger than vertical swipe
-            if (Math.abs(diffX) > 80 && Math.abs(diffX) > Math.abs(diffY)) {
+            // Trigger if horizontal swipe is > 100px and larger than vertical swipe
+            if (Math.abs(diffX) > 100 && Math.abs(diffX) > Math.abs(diffY)) {
                 if (diffX < 0 && currentDayIndex < tripData.days.length - 1) {
                     showDay(currentDayIndex + 1, 'swipe-next'); // Swipe Left -> Next
                 } else if (diffX > 0 && currentDayIndex > 0) {
