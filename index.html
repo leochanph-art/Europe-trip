@@ -355,8 +355,8 @@
             const diffX = touchendX - touchstartX;
             const diffY = touchendY - touchstartY;
             
-            // Trigger if horizontal swipe is > 100px and larger than vertical swipe
-            if (Math.abs(diffX) > 100 && Math.abs(diffX) > Math.abs(diffY)) {
+            // Trigger if horizontal swipe is > 150px and larger than vertical swipe
+            if (Math.abs(diffX) > 150 && Math.abs(diffX) > Math.abs(diffY)) {
                 if (diffX < 0 && currentDayIndex < tripData.days.length - 1) {
                     showDay(currentDayIndex + 1, 'swipe-next'); // Swipe Left -> Next
                 } else if (diffX > 0 && currentDayIndex > 0) {
