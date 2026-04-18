@@ -340,13 +340,7 @@
                 <p class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest mb-1" id="display-dates"></p>
                 <h1 class="text-3xl font-black text-slate-900 tracking-tight leading-none" id="display-title"></h1>
             </div>
-            <div class="flex items-center justify-center relative w-11 h-11 shrink-0">
-                <svg class="w-11 h-11 transform -rotate-90">
-                    <circle cx="22" cy="22" r="18" stroke="currentColor" stroke-width="4" fill="transparent" class="text-slate-100" />
-                    <circle cx="22" cy="22" r="18" stroke="currentColor" stroke-width="4" fill="transparent" class="text-slate-900 transition-all duration-1000 ease-out" id="progress-circle" stroke-dasharray="113" stroke-dashoffset="113" />
-                </svg>
-                <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[9px] font-black text-slate-900" id="progress-text"></span>
-            </div>
+           
         </div>
 
         <div class="grid grid-cols-2 gap-3">
@@ -502,20 +496,7 @@
         let progressPercent = 0;
         let dayToShow = 0;
 
-        if (differenceInDays >= 0 && differenceInDays < totalDays) {
-            progressPercent = Math.round(((differenceInDays + 1) / totalDays) * 100);
-            dayToShow = differenceInDays;
-        } else if (today.getTime() > startDate.getTime()) {
-            progressPercent = 100;
-            dayToShow = totalDays - 1;
-        }
-
-        setTimeout(() => {
-            const circle = document.getElementById('progress-circle');
-            const circumference = 2 * Math.PI * 18; // r=18
-            circle.style.strokeDashoffset = circumference - (progressPercent / 100) * circumference;
-            document.getElementById('progress-text').innerText = progressPercent + '%';
-        }, 100);
+        
 
         showDay(dayToShow);
     </script>
